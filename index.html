@@ -15,17 +15,26 @@
       color: #333;
       flex-direction: column;
       text-align: center;
+      padding: 0 1rem;
     }
-    .email {
+    .email, .linkedin {
       font-family: monospace;
       font-size: 1rem;
       margin-top: 1em;
+    }
+    a {
+      color: #0072b1;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <h1>🚧 Site Under Construction</h1>
   <p>Check back soon! I'm polishing up some pixels ✨</p>
+
   <div class="email">
     Contact me: 
     <script>
@@ -33,9 +42,14 @@
       const domain = "gmail.com";
       document.write(`<a href="mailto:${user}@${domain}">${user}@${domain}</a>`);
     </script>
-    <noscript>
-      (Enable JavaScript to view email)
-    </noscript>
+    <noscript>(Enable JavaScript to view email)</noscript>
+  </div>
+
+  <div class="linkedin">
+    Find me on 
+    <a href="https://www.linkedin.com/in/piperoren" target="_blank" rel="noopener noreferrer">
+      LinkedIn
+    </a>
   </div>
 </body>
 </html>
