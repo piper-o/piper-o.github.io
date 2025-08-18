@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Piper Oren</title>
   <style>
     :root {
       --accent: #222;
       --muted: #666;
       --bg: #f9f9f9;
+      --link: #0056b3;
     }
 
     body {
@@ -19,123 +20,95 @@
       line-height: 1.6;
     }
 
-    .container {
-      max-width: 900px;
+    .layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      max-width: 1100px;
       margin: auto;
-      padding: 1rem;
+      min-height: 100vh;
     }
 
-    header {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 1rem;
+    aside {
+      background: #fff;
+      border-right: 1px solid #ddd;
+      padding: 2rem 1rem;
+      position: sticky;
+      top: 0;
+      align-self: start;
+      height: 100vh;
     }
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.25rem;
+    aside h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
     }
 
-    .subtitle {
-      font-size: 1.2rem;
-      color: var(--muted);
-      margin-bottom: 1rem;
+    .links a {
+      display: block;
+      margin-bottom: 0.5rem;
+      text-decoration: none;
+      color: var(--link);
+      font-size: 0.95rem;
     }
 
-    .contact p {
-      margin: 0.25rem 0;
+    main {
+      padding: 2rem;
     }
 
     section {
-      margin-top: 2rem;
+      margin-bottom: 2rem;
     }
 
     section h2 {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       border-bottom: 1px solid #ccc;
-      margin-bottom: 0.5rem;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
     }
 
     .grid-2 {
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 1rem;
-    }
-
-    .experience, .education {
       margin-bottom: 1rem;
     }
 
-    @media (max-width: 600px) {
-      .grid-2 {
+    @media (max-width: 800px) {
+      .layout {
         grid-template-columns: 1fr;
-        text-align: left;
+      }
+      aside {
+        position: relative;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
       }
     }
   </style>
 </head>
 <body>
-
-  <div class="container">
-    <header>
+  <div class="layout">
+    <aside>
       <h1>Piper Oren</h1>
-      <div class="subtitle">Behavioral Research Coordinator<br>Harvard Business School</div>
-      <div class="contact">
-        <p><strong>Email:</strong> piper(dot)oren(at)gmail.com</p>
-        <p><strong>LinkedIn:</strong> <a href="http://linkedin.com/in/piper-oren">linkedin.com/in/piper-oren</a></p>
-        <p><strong>Member:</strong> <a href="https://www.juliaminson.com/lab">Constructive Disagreement Lab</a></p>
+      <div class="links">
+        <a href="mailto:piper.oren@gmail.com">Email</a>
+        <a href="http://linkedin.com/in/piper-oren" target="_blank">LinkedIn</a>
+        <a href="https://www.juliaminson.com/lab" target="_blank">Constructive Disagreement Lab</a>
       </div>
-    </header>
+    </aside>
 
-    <section>
-      <h2>About</h2>
-      <p>I'm currently focused on other projects and coursework at the Harvard Extension School (Intermediate Statistics and Writing in the Social Sciences), so I haven’t had time to give this site the attention it deserves. I’ll return to it when exams are over, but in the meantime, please feel free to reach out!</p>
-      <p>I chose to study economics and international relations because I wanted to understand how the world operates. I soon realized that traditional models often fall short, which led me to explore the behavioral foundations of both fields.</p>
-      <p>Today, I remain deeply curious about how interdisciplinary evidence and rigorous evaluation can enhance both policies and the policymaking process. I am particularly interested not only in how to scale effective interventions but also in identifying and addressing the barriers that prevent these insights from being fully understood and applied in practice.</p>
-    </section>
+    <main>
+      <section id="about">
+        <h2>About</h2>
+        <p>I am a researcher working at the intersection of behavioral science, economics, and public policy. I first studied economics and international relations to better understand how the world operates, but soon realized that traditional models often fall short. This drew me toward the behavioral foundations of decision-making and policy, where I remain deeply curious about how interdisciplinary evidence and rigorous evaluation can strengthen both policies and the policymaking process.</p>
 
-    <section>
-      <h2>Education</h2>
-      <div class="education grid-2">
-        <div><strong>Connecticut College</strong><br><em>Double Major</em>: Economics and International Relations</div>
-        <div>Bachelor of Arts, May 2020</div>
-      </div>
-      <div class="education grid-2">
-        <div><strong>UChicago Harris School of Public Policy</strong><br><em>Program</em>: Data and Policy Summer Scholar</div>
-        <div>Certificate, Aug. 2023</div>
-      </div>
-      <div class="education grid-2">
-        <div><strong>Harvard Extension School</strong><br><em>Coursework</em>: Intermediate Statistics and Writing in the Social Sciences</div>
-        <div>Expected Aug. 2025</div>
-      </div>
-    </section>
+        <p>My current research interests include the economic, structural, and behavioral barriers that prevent evidence from being adopted or scaled, and how history and geography intertwine with those forces to shape today’s policy challenges. More broadly, I am committed to bridging the gap between rigorous research and practical policymaking.</p>
 
-    <section>
-      <h2>Research Experience</h2>
-      <div class="experience grid-2">
-        <div><strong>Harvard Business School</strong><br><em>Behavioral Research Coordinator</em></div>
-        <div>Aug. 2022 – Present</div>
-      </div>
-      <div class="experience grid-2">
-        <div><strong>MIT Sloan: Behavioral & Policy Sciences</strong><br><em>Lab Coordinator</em></div>
-        <div>Jul. 2021 – Jul. 2022</div>
-      </div>
-      <div class="experience grid-2">
-        <div><strong>Harvard Kennedy School: Prof. Julia Minson</strong><br><em>Research Assistant</em></div>
-        <div>Jul. 2020 – Jul. 2021</div>
-      </div>
-      <div class="experience grid-2">
-        <div><strong>Duke University: Center for Advanced Hindsight</strong><br><em>Research Intern</em></div>
-        <div>Jun. 2019 – Aug. 2019</div>
-      </div>
-      <div class="experience grid-2">
-        <div><strong>Harvard Kennedy School: Decision Science Lab</strong><br><em>Research Assistant</em></div>
-        <div>Dec. 2018 – Feb. 2019</div>
-      </div>
-    </section>
+        <p>Outside of research, I love watercolor painting, swimming, puzzles, gardening (both food and flowers), and spending time in nature.</p>
+      </section>
+
+      <!-- Resume sections here (Education, Experience, etc.) -->
+    </main>
   </div>
-
 </body>
 </html>
