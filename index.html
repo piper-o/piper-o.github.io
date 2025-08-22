@@ -53,6 +53,7 @@
 
     main {
       padding: 2rem;
+      background: #fff;
     }
 
     section {
@@ -66,22 +67,40 @@
       margin-bottom: 1rem;
     }
 
+    /* Two-column rows (left: title/details, right: dates/GPA) */
     .grid-2 {
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 1rem;
       margin-bottom: 1rem;
+      align-items: start;
+    }
+
+    /* Right column: right-align on larger screens */
+    .grid-2 > div:last-child {
+      text-align: right;
     }
 
     @media (max-width: 800px) {
       .layout {
         grid-template-columns: 1fr;
       }
+
       aside {
         position: relative;
         height: auto;
         border-right: none;
         border-bottom: 1px solid #ddd;
+      }
+
+      /* Stack rows and reset alignment on mobile */
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-2 > div:last-child {
+        text-align: left;
+        margin-top: 0.25rem; /* small spacing when stacked */
       }
     }
   </style>
@@ -92,8 +111,8 @@
       <h1>Piper Oren</h1>
       <div class="links">
         <a href="mailto:piper.oren@gmail.com">Email</a>
-        <a href="http://linkedin.com/in/piper-oren" target="_blank">LinkedIn</a>
-        <a href="https://www.juliaminson.com/lab" target="_blank">Constructive Disagreement Lab</a>
+        <a href="http://linkedin.com/in/piper-oren" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.juliaminson.com/lab" target="_blank" rel="noopener">Constructive Disagreement Lab</a>
       </div>
     </aside>
 
@@ -107,57 +126,86 @@
         <p>Outside of research, I love watercolor painting, swimming, puzzles, gardening (both food and flowers), and spending time in nature.</p>
       </section>
 
-<section id="education">
-  <h2>Education</h2>
-  <div class="grid-2">
-    <div><strong>Connecticut College</strong><br>
-      <em>Double Major</em>: Economics & International Relations
-    </div>
-    <div>
-      B.A., May 2020<br>
-      GPA: 3.593
-    </div>
-  </div>
-  <div class="grid-2">
-    <div><strong>UChicago Harris School of Public Policy</strong><br>
-      <em>Program</em>: Data and Policy Summer Scholar
-    </div>
-    <div>
-      Certificate, Aug. 2023<br>
-      Score: 98%
-    </div>
-  </div>
-  <div class="grid-2">
-    <div><strong>Harvard Extension School</strong><br>
-      <em>Coursework</em>: Intermediate Statistics & Writing in the Social Sciences
-    </div>
-    <div>
-      Jul. – Aug. 2025<br>
-      GPA: 3.67
-    </div>
-  </div>
-</section>
+      <section id="education">
+        <h2>Education</h2>
+        <div class="grid-2">
+          <div>
+            <strong>Connecticut College</strong><br>
+            <em>Double Major</em>: Economics &amp; International Relations
+          </div>
+          <div>
+            B.A., May 2020<br>
+            GPA: 3.593
+          </div>
+        </div>
 
+        <div class="grid-2">
+          <div>
+            <strong>UChicago Harris School of Public Policy</strong><br>
+            <em>Program</em>: Data and Policy Summer Scholar
+          </div>
+          <div>
+            Certificate, Aug. 2023<br>
+            Score: 98%
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <strong>Harvard Extension School</strong><br>
+            <em>Coursework</em>: Intermediate Statistics &amp; Writing in the Social Sciences
+          </div>
+          <div>
+            Jul. – Aug. 2025<br>
+            GPA: 3.67
+          </div>
+        </div>
+      </section>
 
       <section id="experience">
         <h2>Research Experience</h2>
+
         <div class="grid-2">
-          <div><strong>Harvard Business School</strong><br><em>Behavioral Research Coordinator</em></div>
+          <div>
+            <strong>Harvard Business School</strong><br>
+            <em>Behavioral Research Coordinator</em>
+          </div>
           <div>Aug. 2022 – Present</div>
         </div>
+
         <div class="grid-2">
-          <div><strong>MIT Sloan: Behavioral & Policy Sciences</strong><br><em>Lab Coordinator</em></div>
+          <div>
+            <strong>MIT Sloan: Behavioral &amp; Policy Sciences</strong><br>
+            <em>Lab Coordinator</em>
+          </div>
           <div>Jul. 2021 – Jul. 2022</div>
         </div>
+
         <div class="grid-2">
-          <div><strong>Harvard Kennedy School: Prof. Julia Minson</strong><br><em>Research Assistant</em></div>
+          <div>
+            <strong>Harvard Kennedy School: Prof. Julia Minson</strong><br>
+            <em>Research Assistant</em>
+          </div>
           <div>Jul. 2020 – Jul. 2021</div>
         </div>
+
         <div class="grid-2">
-          <div><strong>Duke University: Center for Advanced Hindsight</strong><br><em>Research Intern</em></div>
+          <div>
+            <strong>Duke University: Center for Advanced Hindsight</strong><br>
+            <em>Research Intern</em>
+          </div>
           <div>Jun. 2019 – Aug. 2019</div>
         </div>
+
         <div class="grid-2">
-          <div><strong>Harvard Kennedy School: Decision Science Lab</strong><br><em>Research Assistant</em></div>
+          <div>
+            <strong>Harvard Kennedy School: Decision Science Lab</strong><br>
+            <em>Research Assistant</em>
+          </div>
           <div>Dec. 2018 – Feb. 2019</div>
         </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
