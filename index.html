@@ -10,6 +10,7 @@
       --muted: #666;
       --bg: #f9f9f9;
       --link: #0056b3;
+      --card-bg: #fff;
     }
 
     body {
@@ -76,9 +77,31 @@
       align-items: start;
     }
 
-    /* Right column: right-align on larger screens */
     .grid-2 > div:last-child {
       text-align: right;
+    }
+
+    /* Responsive cards for interests */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .grid div {
+      background: var(--card-bg);
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .grid div:hover {
+      transform: translateY(-4px);
+      box-shadow: 4px 6px 12px rgba(0,0,0,0.1);
     }
 
     @media (max-width: 800px) {
@@ -93,14 +116,13 @@
         border-bottom: 1px solid #ddd;
       }
 
-      /* Stack rows and reset alignment on mobile */
       .grid-2 {
         grid-template-columns: 1fr;
       }
 
       .grid-2 > div:last-child {
         text-align: left;
-        margin-top: 0.25rem; /* small spacing when stacked */
+        margin-top: 0.25rem;
       }
     }
   </style>
@@ -118,63 +140,56 @@
 
     <main>
 <section id="about">
-<h2>About</h2>
-<h2>About</h2>
-<p>I quickly became fascinated with how economic and international models were theorized without the behavioral factors that create them. Since then, my work has focused on the behavioral, economic, and structural barriers to improving policies and policymaking processes.&nbsp;</p>
-<p>Below are just a few of the things I can&rsquo;t help but think about when trying to tackle today and tomorrow's policy challenges:</p>
-<!-- First table -->
-<table style="border-color: #808080;" border="1">
-<tbody>
-<tr>
-<td style="text-align: center;">Economics</td>
-<td style="text-align: center;">Policy-making Processes (individual and group)</td>
-<td style="text-align: center;">Domestic Policy</td>
-<td style="text-align: center;">Time</td>
-<td style="text-align: center;">Intergenerational</td>
-</tr>
-<tr>
-<td style="text-align: center;">International Policy</td>
-<td style="text-align: center;">History</td>
-<td style="text-align: center;">Geography</td>
-<td style="text-align: center;">Education Policy</td>
-<td style="text-align: center;">Labor Policy</td>
-</tr>
-<tr>
-<td style="text-align: center;">Inclusive, Representative, and Adaptive Policies</td>
-<td style="text-align: center;">Structures</td>
-<td style="text-align: center;">Behaviors</td>
-<td style="text-align: center;">Environmental</td>
-<td style="text-align: center;">Social Policy</td>
-</tr>
-</tbody>
-</table>
-<p>When I&rsquo;m not working through those, I'll keep myself busy with some of the following until they spark a new research question:</p>
-<!-- Second table -->
-<table style="border-color: #808080;" border="1" cellspacing=".5" cellpadding="2">
-<tbody>
-<tr>
-<td style="text-align: center;">Working in a Community Garden or Urban Agriculture Farm</td>
-<td style="text-align: center;">Films (preferably international, student-produced, and/or short)</td>
-<td style="text-align: center;">Watercoloring - Landscapes, still life, and figures at Life Drawing Boston</td>
-<td style="text-align: center;">Photography (Digital and film)</td>
-<td style="text-align: center;">Studying for the GRE :")</td>
-</tr>
-<tr>
-<td style="text-align: center;">Keeping up with my French</td>
-<td style="text-align: center;">Developing my apartment building's "back yard"</td>
-<td style="text-align: center;">Trying new dishes from cookbooks found in the little libraries around town</td>
-<td style="text-align: center;">Finding new music from around the world to learn the words or dances to</td>
-<td style="text-align: center;">Swimming (fresh, salt, but the best is a running river/watering hole)</td>
-</tr>
-<tr>
-<td style="text-align: center;">Practicing my dance moves (mostly Latin - salsa, bachata, cumbia)</td>
-<td style="text-align: center;">Exploring volunteer opportunities or events</td>
-<td style="text-align: center;">Visiting family (my parents, sister, her husband, and my 4&frac12; y/o nephew)</td>
-<td style="text-align: center;">Learning how others improve policies and policymaking processes in their fields</td>
-<td style="text-align: center;">Keeping up with old friends and memories</td>
-</tr>
-</tbody>
-</table>
-<p>If you'd like to connect, feel free to email me! I am always happy to chat!</p>
+  <h2>About</h2>
+  <p>I quickly became fascinated with how economic and international models were theorized without the behavioral factors that create them. Since then, my work has focused on the behavioral, economic, and structural barriers to improving policies and policymaking processes on micro to macro levels.</p>
+
+  <p>Below are just a few of the things (in no particular order) that I can’t help but think about when trying to tackle today and tomorrow's policy challenges:</p>
+
+  <!-- Policy Interests Grid -->
+  <div class="grid">
+    <div>Economics</div>
+    <div>Policy-making Processes (individual and group)</div>
+    <div>Domestic Policy</div>
+    <div>Time</div>
+    <div>Intergenerational</div>
+    <div>International Policy</div>
+    <div>History</div>
+    <div>Geography</div>
+    <div>Education Policy</div>
+    <div>Labor Policy</div>
+    <div>Inclusive, Representative, and Adaptive Policies</div>
+    <div>Structures</div>
+    <div>Behaviors</div>
+    <div>Environmental</div>
+    <div>Social Policy</div>
+  </div>
+
+  <p>When I’m not working through those, I’ll keep myself busy with some of the following until they spark a new research question:</p>
+
+  <!-- Personal Interests Grid -->
+  <div class="grid">
+    <div>Working in a Community Garden or Urban Agriculture Farm</div>
+    <div>Films (preferably international, student-produced, and/or short)</div>
+    <div>Watercoloring – Landscapes, still life, and figures at Life Drawing Boston</div>
+    <div>Photography (Digital and film)</div>
+    <div>Studying for the GRE :")</div>
+    <div>Keeping up with my French</div>
+    <div>Developing my apartment building's "back yard"</div>
+    <div>Trying new dishes from cookbooks found in the little libraries around town</div>
+    <div>Finding new music from around the world to learn the words or dances to</div>
+    <div>Swimming (fresh, salt, but the best is a running river/watering hole)</div>
+    <div>Practicing my dance moves (mostly Latin – salsa, bachata, cumbia)</div>
+    <div>Exploring volunteer opportunities or events</div>
+    <div>Visiting family (my parents, sister, her husband, and my 4½ y/o nephew)</div>
+    <div>Learning how others improve policies and policymaking processes in their fields</div>
+    <div>Keeping up with old friends and memories</div>
+  </div>
+
+  <p>If you'd like to connect, feel free to email me! I am always happy to chat!</p>
 </section>
-Link to my <a href="https://acrobat.adobe.com/id/urn:aaid:sc:va6c2:a80fc752-3ea2-41ab-a26e-c4803f989b04" target="_blank" rel="noopener">CV</a> <em>(As of 09/13/2025)</em></div>
+
+<p>Link to my <a href="https://acrobat.adobe.com/id/urn:aaid:sc:va6c2:a80fc752-3ea2-41ab-a26e-c4803f989b04" target="_blank" rel="noopener">CV</a> <em>(As of 09/13/2025)</em></p>
+    </main>
+  </div>
+</body>
+</html>
