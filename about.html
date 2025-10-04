@@ -1,18 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About — Piper Oren</title>
-  <link rel="stylesheet" href="/styles.css"> <!-- optional: move your style into styles.css -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- include same header (copy nav block from index.html) -->
-  <header>...copy nav here...</header>
+  <a class="skip-link" href="#main-content" style="position:absolute;left:-9999px;">Skip to content</a>
 
-  <main style="max-width:1100px;margin:2rem auto;padding:1rem;background:#fff;">
+  <!-- header / nav -->
+  <header>
+    <div class="header-inner">
+      <a class="site-title" href="/index.html">Piper Oren</a>
+      <nav aria-label="Primary navigation">
+        <a href="/index.html">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/resume.html">Resume</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/blog/index.html">Blog</a>
+      </nav>
+      <div class="contact-link">
+        <a href="mailto:piper.oren@gmail.com" style="color:var(--link);text-decoration:none">Email</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- main content -->
+  <main id="main-content" style="max-width:1100px;margin:2rem auto;padding:1rem;background:#fff;border:1px solid #eee;border-radius:8px;">
     <h1>About</h1>
-    <p>I quickly became fascinated with how economic and international models were theorized without the behavioral factors that create them. Since then my work has focused on the behavioral, economic, and structural barriers to improving policies and policymaking processes...</p>
+    <p>I quickly became fascinated with how economic and international models were theorized without the behavioral factors that create them. Since then, my work has focused on the behavioral, economic, and structural barriers to improving policies and policymaking processes on micro to macro levels.</p>
 
     <h2>Selected Interests</h2>
     <ul>
@@ -25,7 +42,12 @@
     <p>Email me at <a href="mailto:piper.oren@gmail.com">piper.oren@gmail.com</a></p>
   </main>
 
-  <!-- footer (copy footer block from index.html) -->
-  <footer>...copy footer here...</footer>
+  <!-- footer -->
+  <footer>
+    <div style="max-width:1100px;margin:auto;color:var(--muted);font-size:0.9rem">
+      © Piper Oren — built with a lightweight static site (HTML + CSS).
+      <a href="/privacy.html" style="color:var(--link)">Privacy</a>
+    </div>
+  </footer>
 </body>
 </html>
