@@ -13,6 +13,8 @@
       --card-bg: #fff;
     }
 
+    /* Basic page styles */
+    html, body { height: 100%; }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -21,12 +23,43 @@
       line-height: 1.6;
     }
 
+    a { color: var(--link); }
+
+    /* Header / nav */
+    header {
+      background: var(--card-bg);
+      border-bottom: 1px solid #e6e6e6;
+    }
+    .header-inner {
+      max-width:1100px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      gap:1rem;
+      padding:0.75rem 1rem;
+    }
+    .site-title {
+      text-decoration:none;
+      color:var(--accent);
+      font-weight:700;
+      font-size:1.1rem;
+    }
+    nav a {
+      margin-right:0.75rem;
+      color:var(--link);
+      text-decoration:none;
+      font-size:0.95rem;
+    }
+    .contact-link { margin-left:auto; font-size:0.9rem; color:var(--muted); }
+
+    /* Layout */
     .layout {
       display: grid;
       grid-template-columns: 220px 1fr;
       max-width: 1100px;
-      margin: auto;
-      min-height: 100vh;
+      margin: 2rem auto;
+      min-height: calc(100vh - 84px); /* header + some spacing */
+      gap: 1.5rem;
     }
 
     aside {
@@ -34,14 +67,15 @@
       border-right: 1px solid #ddd;
       padding: 2rem 1rem;
       position: sticky;
-      top: 0;
+      top: 1rem;
       align-self: start;
-      height: 100vh;
+      height: calc(100vh - 4rem);
+      overflow: auto;
     }
 
     aside h1 {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
     }
 
     .links a {
@@ -50,16 +84,17 @@
       text-decoration: none;
       color: var(--link);
       font-size: 0.95rem;
+      word-break: break-word;
     }
 
     main {
       padding: 2rem;
       background: #fff;
+      border: 1px solid #eee;
+      border-radius: 8px;
     }
 
-    section {
-      margin-bottom: 2rem;
-    }
+    section { margin-bottom: 2rem; }
 
     section h2 {
       font-size: 1.4rem;
@@ -77,9 +112,7 @@
       align-items: start;
     }
 
-    .grid-2 > div:last-child {
-      text-align: right;
-    }
+    .grid-2 > div:last-child { text-align: right; }
 
     /* Responsive cards for interests */
     .grid {
@@ -104,9 +137,18 @@
       box-shadow: 4px 6px 12px rgba(0,0,0,0.1);
     }
 
+    footer {
+      background:#fff;
+      margin-top:2rem;
+      border-top:1px solid #eee;
+      padding:1rem;
+    }
+
     @media (max-width: 800px) {
       .layout {
         grid-template-columns: 1fr;
+        margin: 1rem;
+        min-height: auto;
       }
 
       aside {
@@ -114,6 +156,7 @@
         height: auto;
         border-right: none;
         border-bottom: 1px solid #ddd;
+        top: 0;
       }
 
       .grid-2 {
@@ -124,69 +167,105 @@
         text-align: left;
         margin-top: 0.25rem;
       }
+
+      .header-inner { padding: 0.5rem 0.75rem; }
     }
   </style>
 </head>
 <body>
-  <div class="layout">
-    <aside>
-      <h1>Piper Oren</h1>
-      <div class="links">
+  <a class="skip-link" href="#main-content" style="position:absolute;left:-9999px;top:auto;overflow:hidden;">Skip to content</a>
+
+  <!-- header / nav -->
+  <header>
+    <div class="header-inner">
+      <a class="site-title" href="/index.html">Piper Oren</a>
+      <nav aria-label="Primary navigation">
+        <a href="/index.html">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/resume.html">Resume</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/blog/index.html">Blog</a>
+      </nav>
+      <div class="contact-link">
+        <a href="mailto:piper.oren@gmail.com" style="color:var(--link);text-decoration:none">Email</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- page layout -->
+  <div class="layout" role="main" id="main-content">
+    <aside aria-labelledby="profile-title">
+      <h1 id="profile-title">Piper Oren</h1>
+
+      <div class="links" aria-label="Contact links">
         <a href="mailto:piper.oren@gmail.com">Email</a>
-        <a href="http://linkedin.com/in/piper-oren" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/piper-oren" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://www.juliaminson.com/lab" target="_blank" rel="noopener">Constructive Disagreement Lab</a>
       </div>
-      
-    <section>
-      <p>If you'd like to connect, feel free to email me! I am always happy to chat.</p>
-    </section>
+
+      <section aria-label="Short note">
+        <p>If you'd like to connect, feel free to email me! I am always happy to chat.</p>
+      </section>
     </aside>
 
     <main>
-<section id="about">
-<h2>About</h2>
-<p>I quickly became fascinated with how economic and international models were theorized without the behavioral factors that create them. Since then, my work has focused on the behavioral, economic, and structural barriers to improving policies and policymaking processes on micro to macro levels.</p>
-<p>Below are just a few of the things (in no particular order) that I can&rsquo;t help but think about when trying to tackle today and tomorrow's policy challenges:</p>
-<!-- Lenses Grid -->
-<h3>Lenses</h3>
-<div class="grid">
-<div>Economic</div>
-<div>Behavioral</div>
-<div>Structural</div>
-<div>Equity & Justice</div>
-<div>Historical</div>
-<div>Geographical</div>
-<div>Intergenerational</div>
-<div>Institutional</div>
-<div>Statistical</div>
-</div>
-<!-- Policy Domains Grid -->
-<h3>Policy Areas</h3>
-<div class="grid">
-<div>Domestic & International Policy</div>
-<div>Education Policy</div>
-<div>Labor Policy</div>
-<div>Urban Policy</div>
-<div>Technological Policy</div>
-<div>Infrastructure & Transportation Policy</div>
-<div>Social Policy</div>
-<div>Energy & Climate Policy</div>
-<div>Health Policy</div>
-</div>
-<h3>&nbsp;</h3>
-<h3>Until the Next Research Question, I'll be&hellip;</h3>
-<div class="grid">
-<div>Working at a community garden or urban farm</div>
-<div>Watercoloring (sometimes at Life Drawing Boston)</div>
-<div>Learning how others improve policies in their fields (I can&rsquo;t help it)</div>
-<div>Practicing Latin dance (salsa, bachata, and cumbia)</div>
-<div>Developing my apartment building&rsquo;s back yard</div>
-<div>Trying new dishes from little-library cookbooks</div>
-<div>Finding new music from around the world</div>
-<div>Swimming in nature</div>
-<div>Keeping up with my French</div>
-<div>Taking photos (digital &amp; film - ISO a place to develop my own prints!)</div>
-<div>Visiting family (my parents, sister, &amp; 4&frac12; y/o nephew &lt;3)</div>
-<div>Exploring new places, opportunities, and events</div>
-</div>
+      <section id="about">
+        <h2>About</h2>
+        <p>I quickly became fascinated with how economic and international models were theorized without the behavioral factors that create them. Since then, my work has focused on the behavioral, economic, and structural barriers to improving policies and policymaking processes on micro to macro levels.</p>
+        <p>Below are just a few of the things (in no particular order) that I can’t help but think about when trying to tackle today and tomorrow's policy challenges:</p>
+
+        <!-- Lenses Grid -->
+        <h3>Lenses</h3>
+        <div class="grid" aria-hidden="false">
+          <div>Economic</div>
+          <div>Behavioral</div>
+          <div>Structural</div>
+          <div>Equity &amp; Justice</div>
+          <div>Historical</div>
+          <div>Geographical</div>
+          <div>Intergenerational</div>
+          <div>Institutional</div>
+          <div>Statistical</div>
+        </div>
+
+        <!-- Policy Domains Grid -->
+        <h3>Policy Areas</h3>
+        <div class="grid">
+          <div>Domestic &amp; International Policy</div>
+          <div>Education Policy</div>
+          <div>Labor Policy</div>
+          <div>Urban Policy</div>
+          <div>Technological Policy</div>
+          <div>Infrastructure &amp; Transportation Policy</div>
+          <div>Social Policy</div>
+          <div>Energy &amp; Climate Policy</div>
+          <div>Health Policy</div>
+        </div>
+
+        <h3>Until the Next Research Question, I'll be…</h3>
+        <div class="grid">
+          <div>Working at a community garden or urban farm</div>
+          <div>Watercoloring (sometimes at Life Drawing Boston)</div>
+          <div>Learning how others improve policies in their fields (I can’t help it)</div>
+          <div>Practicing Latin dance (salsa, bachata, and cumbia)</div>
+          <div>Developing my apartment building’s back yard</div>
+          <div>Trying new dishes from little-library cookbooks</div>
+          <div>Finding new music from around the world</div>
+          <div>Swimming in nature</div>
+          <div>Keeping up with my French</div>
+          <div>Taking photos (digital &amp; film - ISO a place to develop my own prints!)</div>
+          <div>Visiting family (my parents, sister, &amp; 4½ y/o nephew &lt;3)</div>
+          <div>Exploring new places, opportunities, and events</div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div style="max-width:1100px;margin:auto;color:var(--muted);font-size:0.9rem">
+      © Piper Oren — built with a lightweight static site (HTML + CSS).
+      <a href="/privacy.html" style="color:var(--link)">Privacy</a>
+    </div>
+  </footer>
+</body>
 </html>
