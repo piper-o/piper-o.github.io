@@ -3,31 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="stylesheet" href="styles.css">
   <title>Piper Oren</title>
- 
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main-content" style="position:absolute;left:-9999px;top:auto;overflow:hidden;">Skip to content</a>
+  <a class="skip-link" href="#main-content" style="position:absolute;left:-9999px;">Skip to content</a>
 
-  <!-- header / nav -->
+  <!-- shared nav -->
   <header>
     <div class="header-inner">
+      <!-- site title links to home -->
       <a class="site-title" href="/index.html">Piper Oren</a>
+
       <nav aria-label="Primary navigation">
-        <a href="/index.html">Home</a>
         <a href="/about.html">About</a>
-        <a href="/resume.html">Resume</a>
+        <a href="piper-oren-resume.pdf" target="_blank" rel="noopener">Resume</a>
         <a href="/projects.html">Projects</a>
-        <a href="/blog/index.html">Blog</a>
       </nav>
+
       <div class="contact-link">
         <a href="mailto:piper.oren@gmail.com" style="color:var(--link);text-decoration:none">Email</a>
       </div>
     </div>
   </header>
 
-  <!-- page layout -->
   <div class="layout" role="main" id="main-content">
     <aside aria-labelledby="profile-title">
       <h1 id="profile-title">Piper Oren</h1>
@@ -36,21 +35,23 @@
         <a href="mailto:piper.oren@gmail.com">Email</a>
         <a href="https://www.linkedin.com/in/piper-oren" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://www.juliaminson.com/lab" target="_blank" rel="noopener">Constructive Disagreement Lab</a>
+        <a href="piper-oren-resume.pdf" target="_blank" rel="noopener">Download Résumé (PDF)</a>
       </div>
 
       <section aria-label="Short note">
-        <p>If you'd like to connect, feel free to email me! I am always happy to chat.</p>
+        <p>If you'd like to connect, feel free to email me — I’m always happy to chat.</p>
       </section>
     </aside>
 
     <main>
-      <section id="about">
-        <h2>About</h2>
-        <p>I quickly became fascinated with how economic and international models were theorized without the behavioral factors that create them. Since then, my work has focused on the behavioral, economic, and structural barriers to improving policies and policymaking processes on micro to macro levels.</p>
-        <p>Below are just a few of the things (in no particular order) that I can’t help but think about when trying to tackle today and tomorrow's policy challenges:</p>
+      <section id="intro">
+        <h2>Hi — I'm Piper</h2>
+        <p>I study how behavioral, economic, and structural factors shape policy and public outcomes. I combine empirical research, stakeholder engagement, and practical policy design to help move good evidence into action.</p>
+      </section>
 
-        <!-- Lenses Grid -->
-        <h3>Lenses</h3>
+      <section id="lenses">
+        <h2>Lenses</h2>
+        <p>Thinking tools I use when I analyze a problem:</p>
         <div class="grid" aria-hidden="false">
           <div>Economic</div>
           <div>Behavioral</div>
@@ -62,35 +63,20 @@
           <div>Institutional</div>
           <div>Statistical</div>
         </div>
+      </section>
 
-        <!-- Policy Domains Grid -->
-        <h3>Policy Areas</h3>
+      <section id="interests">
+        <h2>Research & Other Interests</h2>
         <div class="grid">
           <div>Domestic &amp; International Policy</div>
           <div>Education Policy</div>
           <div>Labor Policy</div>
           <div>Urban Policy</div>
           <div>Technological Policy</div>
-          <div>Infrastructure &amp; Transportation Policy</div>
-          <div>Social Policy</div>
-          <div>Energy &amp; Climate Policy</div>
+          <div>Infrastructure &amp; Transportation</div>
+          <div>Energy &amp; Climate</div>
           <div>Health Policy</div>
-        </div>
-
-        <h3>Until the Next Research Question, I'll be…</h3>
-        <div class="grid">
-          <div>Working at a community garden or urban farm</div>
-          <div>Watercoloring (sometimes at Life Drawing Boston)</div>
-          <div>Learning how others improve policies in their fields (I can’t help it)</div>
-          <div>Practicing Latin dance (salsa, bachata, and cumbia)</div>
-          <div>Developing my apartment building’s back yard</div>
-          <div>Trying new dishes from little-library cookbooks</div>
-          <div>Finding new music from around the world</div>
-          <div>Swimming in nature</div>
-          <div>Keeping up with my French</div>
-          <div>Taking photos (digital &amp; film - ISO a place to develop my own prints!)</div>
-          <div>Visiting family (my parents, sister, &amp; 4½ y/o nephew &lt;3)</div>
-          <div>Exploring new places, opportunities, and events</div>
+          <div>Evidence use and evaluation</div>
         </div>
       </section>
     </main>
@@ -99,7 +85,6 @@
   <footer>
     <div style="max-width:1100px;margin:auto;color:var(--muted);font-size:0.9rem">
       © Piper Oren — built with a lightweight static site (HTML + CSS).
-      <a href="/privacy.html" style="color:var(--link)">Privacy</a>
     </div>
   </footer>
 </body>
