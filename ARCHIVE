@@ -1,1 +1,255 @@
 ARCHIVE
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Piper Oren</title>
+
+  <meta name="description" content="Behavioral and policy researcher studying how evidence, behavior, and institutions shape adaptive and inclusive public systems.">
+
+  <meta property="og:title" content="Piper Oren">
+  <meta property="og:description" content="Research at the intersection of behavioral science, economics, and public policy.">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --max-width: 1100px;
+      --muted: #6b6b6b;
+      --accent: #3E2C66;
+      --bg-card: #fbfbfc;
+      --text: #1a1a1a;
+      --lead-size: 1.05rem;
+      --base-size: 16px;
+      --radius: 10px;
+    }
+
+    html { box-sizing: border-box; }
+    *, *:before, *:after { box-sizing: inherit; }
+
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  /* clean academic sans-serif */
+        color: var(--text);
+        font-size: var(--base-size);
+        line-height: 1.7;
+        background: #ffffff;
+      }
+
+    /* page container */
+    .container, .header-inner, footer > div {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    header { border-bottom: 1px solid #eee; background: #fff; }
+    .header-inner {
+      display:flex; align-items:center; gap:1rem;
+      justify-content:space-between; padding:0.75rem 1rem;
+    }
+
+    /* layout columns */
+    .layout {
+      display:grid;
+      grid-template-columns: 300px 1fr;
+      gap: 2rem;
+      padding:2rem 1rem;
+      align-items:start;
+      max-width: calc(var(--max-width) + 2rem);
+      margin: 0 auto;
+    }
+    aside {
+      border-right: 1px solid #f5f5f5;
+      padding-right:1rem;
+      text-align:right;
+    }
+    main { padding-left:1rem; }
+
+    @media (max-width: 860px){
+      .layout { grid-template-columns: 1fr; }
+      aside {
+        border-right: none;
+        padding-right:0;
+        padding-bottom:1rem;
+        border-bottom:1px solid #f5f5f5;
+      }
+      main { padding-left:0; }
+    }
+
+    /* aside content */
+    aside h1 {
+      margin:0 0 0.5rem 0;
+      font-size:1.25rem;
+      color:var(--accent);
+    }
+    .links {
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:0.4rem;
+    }
+    .links a {
+      color:var(--accent);
+      font-weight:600;
+      text-decoration:none;
+    }
+    .links a:hover { text-decoration:underline; }
+
+    /* hero / intro */
+    .hero h2 {
+      margin:0 0 0.5rem 0;
+      font-size:1.6rem;
+      color:var(--accent);
+    }
+    .hero p {
+      margin:0 0 1.25rem 0;
+      font-size: var(--lead-size);
+      color:#222;
+      max-width: 70ch;
+    }
+
+    /* research focus */
+    #research-focus h2 {
+      margin-top:0.25rem;
+      font-size:1.25rem;
+      color:var(--accent);
+    }
+    #research-focus p {
+      margin:0 0 0.9rem 0;
+      max-width:70ch;
+    }
+
+    /* focus cards */
+    .focus-wrap { display:flex; justify-content:center; }
+    .focus-list {
+      list-style:none;
+      padding:0;
+      margin:1rem 0 1.25rem 0;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:1.25rem;
+      max-width: 980px;
+    }
+    .focus-list li {
+      flex: 1 1 260px;
+      min-width: 220px;
+      background: var(--bg-card);
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(60,60,60,0.06);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+      text-align: left;
+    }
+    .focus-list li strong {
+      display:block;
+      margin-bottom:0.4rem;
+      color:var(--accent);
+      font-weight:700;
+    }
+
+    /* projects */
+    #projects h2 {
+      color: var(--accent);
+      margin-top: 1.5rem;
+      font-size: 1.3rem;
+    }
+
+    #projects ul {
+      padding-left: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    #projects li {
+      margin-bottom: 0.6rem;
+      max-width: 70ch;
+    }
+
+    #projects li strong {
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    footer {
+      border-top:1px solid #f0f0f0;
+      padding:1.25rem 1rem;
+      color:var(--muted);
+      font-size:0.9rem;
+      text-align:center;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content" style="position:absolute;left:-9999px;">Skip to content</a>
+
+  <header>
+    <div class="header-inner container">
+      <!-- navigation removed -->
+    </div>
+  </header>
+
+  <div class="layout" role="main" id="main-content">
+    <aside aria-labelledby="profile-title">
+      <h1 id="profile-title">Piper Oren</h1>
+      <div class="links" aria-label="Contact links">
+        <a href="https://www.linkedin.com/in/piper-oren/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.juliaminson.com/lab" target="_blank" rel="noopener">Constructive Disagreement Lab</a>
+      </div>
+    </aside>
+
+    <main>
+      <!-- Intro -->
+      <section id="intro" class="hero" aria-labelledby="intro-title">
+        <h2 id="intro-title">Hello!</h2>
+        <p>
+          I’ve always been fascinated by how people and governments make decisions and why even the best evidence can struggle to change them.
+          My research bridges behavioral science, economics, and public policy to explore how systems can adapt to the people they serve.
+        </p>
+      </section>
+
+      <!-- Research Focus -->
+      <section id="research-focus" aria-labelledby="research-focus-title">
+        <h2 id="research-focus-title">Research Focus</h2>
+        <p>
+          I study how evidence, behavior, and institutions interact to shape public policy, why good evidence doesn’t always lead to good outcomes, and how policymaking can become more representative, adaptive, and inclusive.
+        </p>
+        <p>
+          My work examines both the policies themselves and the processes that create them: how decisions are made, whose perspectives are included, and what barriers prevent change. I’m especially interested in how policies evolve over time and across generations, influencing opportunity and well-being for people, families, and communities.
+        </p>
+        <p>I often work across four interconnected systems:</p>
+        <div class="focus-wrap" aria-hidden="false">
+          <ul class="focus-list" aria-label="Focus areas">
+            <li><strong>Opportunity Systems</strong> Education, labor, and social policies that shape access and mobility.</li>
+            <li><strong>Place-Based Systems</strong> Urban policy, infrastructure, and local governance that define how communities grow and adapt.</li>
+            <li><strong>Environmental and Technological Transitions</strong> Energy, climate adaptation, and the governance of emerging technologies.</li>
+            <li><strong>Temporal and Generational Systems</strong> How decisions unfold over time and across generations, affecting families and future opportunity.</li>
+          </ul>
+        </div>
+        <p>
+          Across these areas, I study how governments use or overlook evidence, reduce administrative burden, translate research into practice, and build institutions that learn and adapt over time.
+        </p>
+      </section>
+
+      <!-- Selected Work -->
+      <section id="projects" aria-labelledby="projects-title">
+        <h2 id="projects-title">Selected Work</h2>
+        <ul>
+          <li><strong>Reimagining the Evidence in Evidence-Based Policymaking</strong>: Graduate research paper examining the economic, structural, and behavioral barriers to evidence use in government, and proposing system-level reforms to make policymaking more adaptive and inclusive.</li>
+          <li><strong>Evidence Use in Local Government</strong>: Mixed-methods study of institutional barriers and incentives shaping how cities and states use research in policy reform, with attention to the types of evidence valued across agencies.</li>
+          <li><strong>Patterns of Internal Displacement in Afghanistan</strong>: Evaluation of UNHCR survey representativeness against geospatial and cellphone mobility data to understand population movement and data quality under crisis conditions.</li>
+          <li><strong>Behavioral Research Operations</strong>: Development of standardized procedures for in-lab and online behavioral studies, improving administrative data documentation, reproducibility, and financial and capacity reporting.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="container">
+      © Piper Oren — built with a lightweight static site (HTML + CSS).
+    </div>
+  </footer>
+</body>
+</html>
