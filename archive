@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Piper Oren</title>
+
+  <meta name="description" content="Behavioral and policy researcher studying how evidence, behavior, and institutions shape adaptive and inclusive public systems.">
+
+  <meta property="og:title" content="Piper Oren">
+  <meta property="og:description" content="Research at the intersection of behavioral science, economics, and public policy.">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --max-width: 1100px;
+      --muted: #6b6b6b;
+      --accent: #3E2C66;
+      --bg-card: #fbfbfc;
+      --text: #1a1a1a;
+      --lead-size: 1.05rem;
+      --base-size: 16px;
+      --radius: 10px;
+    }
+
+    html { box-sizing: border-box; }
+    *, *:before, *:after { box-sizing: inherit; }
+
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: var(--text);
+      font-size: var(--base-size);
+      line-height: 1.7;
+      background: #ffffff;
+    }
+
+    .container, .header-inner, footer > div {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    header { border-bottom: 1px solid #eee; background: #fff; }
+    .header-inner {
+      display:flex; align-items:center; gap:1rem;
+      justify-content:space-between; padding:0.75rem 1rem;
+    }
+
+    .layout {
+      display:grid;
+      grid-template-columns: 300px 1fr;
+      gap: 2rem;
+      padding:2rem 1rem;
+      align-items:start;
+      max-width: calc(var(--max-width) + 2rem);
+      margin: 0 auto;
+    }
+
+    aside {
+      border-right: 1px solid #f5f5f5;
+      padding-right:1rem;
+      text-align:right;
+    }
+
+    main { padding-left:1rem; }
+
+    @media (max-width: 860px){
+      .layout { grid-template-columns: 1fr; }
+      aside {
+        border-right: none;
+        padding-right:0;
+        padding-bottom:1rem;
+        border-bottom:1px solid #f5f5f5;
+      }
+      main { padding-left:0; }
+    }
+
+    aside h1 {
+      margin:0 0 0.5rem 0;
+      font-size:1.25rem;
+      color:var(--accent);
+    }
+
+    .links {
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:0.4rem;
+    }
+
+    .links a {
+      color:var(--accent);
+      font-weight:600;
+      text-decoration:none;
+    }
+
+    .links a:hover { text-decoration:underline; }
+
+    #research-focus h2 {
+      margin-top:0.25rem;
+      font-size:1.4rem;
+      color:var(--accent);
+    }
+
+    #research-focus p {
+      margin:0 0 1.25rem 0;
+      max-width:70ch;
+      color:#222;
+      font-size: var(--lead-size);
+    }
+
+    #research-focus ul {
+      list-style:none;
+      padding:0;
+      margin:1rem 0;
+      max-width:70ch;
+    }
+
+    #research-focus li {
+      margin-bottom:1.25rem;
+    }
+
+    #research-focus li h3 {
+      margin:0 0 0.25rem 0;
+      font-size:1.05rem;
+      color:var(--accent);
+      font-weight:700;
+    }
+
+    #research-focus li p {
+      margin:0;
+    }
+
+    footer {
+      border-top:1px solid #f0f0f0;
+      padding:1.25rem 1rem;
+      color:var(--muted);
+      font-size:0.9rem;
+      text-align:center;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content" style="position:absolute;left:-9999px;">Skip to content</a>
+
+  <header>
+    <div class="header-inner container"></div>
+  </header>
+
+  <div class="layout" role="main" id="main-content">
+    <aside aria-labelledby="profile-title">
+      <h1 id="profile-title">Piper Oren</h1>
+      <div class="links" aria-label="Contact links">
+        <a href="https://www.linkedin.com/in/piper-oren/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.juliaminson.com/lab" target="_blank" rel="noopener">Constructive Disagreement Lab</a>
+      </div>
+    </aside>
+
+    <section id="research-focus" aria-labelledby="focus-title">
+      <h2 id="focus-title">Research & Policy Interests</h2>
+      <p>
+        I study how people and institutions make decisions, how those decisions become policy, and what helps systems learn and improve.
+        My work brings together behavioral science, policy design, and institutional reform.
+        I’m interested in how evidence and judgment interact in real settings and what helps organizations use knowledge to act more effectively and equitably.
+      </p>
+      <p>
+        I focus on the systems that shape how governments and communities make choices—how evidence moves through them, how capacity is built, and how people experience the outcomes.
+        My goal is to help design decision environments that connect research, implementation, and trust.
+      </p>
+
+      <ul>
+        <li>
+          <h3>Decision Systems</h3>
+          <p>I study the behavioral and organizational factors that shape how people and institutions make choices. My work looks at how evidence, incentives, and context influence judgment and how decision quality can improve when systems are designed with behavior in mind.</p>
+        </li>
+
+        <li>
+          <h3>Institutional Capacity and Learning</h3>
+          <p>I’m interested in how governments and organizations build the ability to learn from experience. That includes how they create space for experimentation, interpret feedback, and balance learning with accountability. I study what makes institutional change possible and how capacity grows or erodes over time.</p>
+        </li>
+
+        <li>
+          <h3>Evidence Systems</h3>
+          <p>I study how research and data move through policy environments. This includes how evidence is collected, interpreted, and applied, and what supports or blocks that process. I’m especially interested in how credibility, legitimacy, and trust affect whether evidence is used at all.</p>
+        </li>
+
+        <li>
+          <h3>Equity and Opportunity Systems</h3>
+          <p>I look at how policy design shapes access to opportunity—who benefits, who is left out, and why. My work examines the structural and behavioral barriers that appear in education, labor, and social programs, and what it would take to make these systems more inclusive and responsive.</p>
+        </li>
+
+        <li>
+          <h3>System Reform and Design</h3>
+          <p>I’m interested in how behavioral research can help governments and institutions adapt. My work connects insights about human behavior, learning, and feedback to the design of policy systems that are more fair, transparent, and capable of change.</p>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">© Piper Oren</div>
+  </footer>
+</body>
+</html>
