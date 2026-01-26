@@ -1,33 +1,434 @@
-About
-My interests involve supporting public servants and institutions in improving decision-making environments and organizational conditions to promote evidence-driven policy.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Piper Oren</title>
 
-I earned a B.A. in economics and international relations from Connecticut College, where I completed a behavioral economics honors thesis and received the Chair’s Prize in Economics. I have applied behavioral science experience across academic and policy settings, including roles at Harvard Kennedy School, Duke University, and the MIT Sloan School of Management. I currently serve as the Behavioral Research Coordinator at Harvard Business School, and I support research that explores individual, group, and organizational decision-making. I have supplemented this professional research work with graduate-level courses in statistics, data, and public policy study at the University of Chicago Harris School of Public Policy and Harvard Extension School.
+  <meta name="description" content="Research focused on how public institutions use evidence in practice, with an emphasis on evaluation capacity, decision-making environments, and policy implementation.">
 
-In 2025, I was selected as one of 29 participants in J-PAL North America’s Research Staff Training and as one of 20 participants in McGill’s Max Bell School of Public Policy Evaluation Capacity Case Challenge.
+  <meta property="og:title" content="Piper Oren">
+  <meta property="og:description" content="Work at the intersection of behavioral science, economics, and public institutions, with a focus on evidence use and implementation.">
+  <meta property="og:type" content="website">
 
-Outside of work, I enjoy spending time exploring the outdoors and supporting community gardens and local organizations (See below).
+  <style>
+    :root {
+      --max-width: 1100px;
+      --muted: #6b6b6b;
+      --accent: #3E2C66;
+      --bg-card: #fbfbfc;
+      --text: #1a1a1a;
+      --lead-size: 1.05rem;
+      --base-size: 16px;
+      --radius: 10px;
+    }
 
-Please feel free to reach out! piper(dot)oren(at)gmail(dot)com
+    html { box-sizing: border-box; }
+    *, *:before, *:after { box-sizing: inherit; }
 
-Community Gardens
-- Somerville Growing Center
-- Groundworks Somerville
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: var(--text);
+      font-size: var(--base-size);
+      line-height: 1.7;
+      background: #ffffff;
+    }
 
-Local Organizations
-- Many Helping Hands 365
-- Giving Joy
-- YWCA Cambridge
+    .container, .header-inner, footer > div {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem;
+    }
 
-____Before
-About
-My work focuses on strengthening how public institutions use evidence in practice. I am particularly interested in building local and state evaluation capacity and improving the systems, decision-making environments, and organizational conditions that shape whether evidence informs policy implementation. My goal is to support public servants and institutions in translating research into adaptive, effective, and representative public policy.
+    header { border-bottom: 1px solid #eee; background: #fff; }
+    .header-inner {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0.75rem 1rem;
+    }
 
-I earned a B.A. in economics and international relations from Connecticut College, where I completed a behavioral economics honors thesis and received the Chair’s Prize in Economics. My academic training reflects a broader interest in understanding how incentives, institutions, and human behavior interact in policymaking contexts.
+    .layout {
+      display:grid;
+      grid-template-columns: 300px 1fr;
+      gap: 2rem;
+      padding:2rem 1rem;
+      align-items:start;
+      max-width: calc(var(--max-width) + 2rem);
+      margin: 0 auto;
+    }
 
-I have applied behavioral science experience across academic and policy settings, including roles at Harvard Kennedy School, Duke University, and the MIT Sloan School of Management. I currently serve as the Behavioral Research Coordinator at Harvard Business School, where I support research at the intersection of decision-making, organizations, and applied policy relevance. My graduate-level coursework in statistics, economics, and public policy includes study at the University of Chicago Harris School of Public Policy and Harvard Extension School.
+    aside {
+      border-right: 1px solid #f5f5f5;
+      padding-right:1rem;
+      text-align:right;
+    }
 
-In 2025, I was selected as one of 29 participants in J-PAL North America’s Research Staff Training and as one of 20 participants in McGill’s Max Bell School of Public Policy Evaluation Capacity Case Challenge. These experiences further shaped my interest in evidence use, evaluation systems, and public-sector capacity building.
+    @media (max-width: 860px){
+      .layout { grid-template-columns: 1fr; }
+      aside {
+        border-right: none;
+        padding-right:0;
+        padding-bottom:1rem;
+        border-bottom:1px solid #f5f5f5;
+        text-align:left;
+      }
+      .links { align-items:flex-start; }
+    }
 
-Outside of work, I enjoy spending time exploring the outdoors and supporting community gardens and local organizations.
+    aside h1 {
+      margin:0 0 0.5rem 0;
+      font-size:1.25rem;
+      color:var(--accent);
+    }
 
-Please feel free to reach out! piper(dot)oren(at)gmail(dot)com
+    .links {
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:0.4rem;
+    }
+
+    .links a {
+      color:var(--accent);
+      font-weight:600;
+      text-decoration:none;
+    }
+
+    .links a:hover { text-decoration:underline; }
+
+    #research-focus h2 {
+      margin-top:0.25rem;
+      font-size:1.4rem;
+      color:var(--accent);
+    }
+
+    #research-focus p {
+      margin:0 0 1.25rem 0;
+      max-width:70ch;
+      color:#222;
+      font-size: var(--lead-size);
+    }
+
+    footer {
+      border-top:1px solid #f0f0f0;
+      padding:1.25rem 1rem;
+      color:var(--muted);
+      font-size:0.9rem;
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content" style="position:absolute;left:-9999px;">Skip to content</a>
+
+  <header>
+    <div class="header-inner container"></div>
+  </header>
+
+  <div class="layout" role="main" id="main-content">
+    <aside aria-labelledby="profile-title">
+      <h1 id="profile-title">Piper Oren</h1>
+      <div class="links" aria-label="Contact links">
+        <a href="https://www.linkedin.com/in/piper-oren/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.juliaminson.com/lab" target="_blank" rel="noopener">Constructive Disagreement Lab</a>
+      </div>
+    </aside>
+
+<section id="research-focus" aria-labelledby="focus-title">
+  <h2 id="focus-title">About</h2>
+
+  <p>
+    My interests involve supporting public servants and institutions in improving decision-making environments and organizational conditions to promote evidence-driven policy.
+  </p>
+
+  <p>
+    I earned a B.A. in economics and international relations from Connecticut College, where I completed a behavioral economics honors thesis and received the Chair’s Prize in Economics. I have applied behavioral science experience across academic and policy settings, including roles at Harvard Kennedy School, Duke University, and the MIT Sloan School of Management.
+  </p>
+
+  <p>
+    I currently serve as the Behavioral Research Coordinator at Harvard Business School, where I support research exploring individual, group, and organizational decision-making. I have supplemented this professional research work with graduate-level coursework in statistics, data, and public policy at the University of Chicago Harris School of Public Policy and Harvard Extension School.
+  </p>
+
+  <p>
+    In 2025, I was selected as one of 29 participants in J-PAL North America’s Research Staff Training and as one of 20 participants in McGill’s Max Bell School of Public Policy Evaluation Capacity Case Challenge.
+  </p>
+
+  <p>
+    Outside of work, I enjoy spending time exploring the outdoors and supporting community gardens and local organizations.
+  </p>
+
+  <p>
+    Please feel free to reach out! <strong>piper(dot)oren(at)gmail(dot)com</strong>
+  </p>
+
+  <p><strong>Community Gardens</strong></p>
+  <ul>
+    <li>
+      Somerville Community Growing Center —
+      <a href="https://www.thegrowingcenter.org/" target="_blank" rel="noopener">
+        thegrowingcenter.org
+      </a>
+    </li>
+    <li>
+      Groundwork Somerville —
+      <a href="https://groundworksomerville.org/" target="_blank" rel="noopener">
+        groundworksomerville.org
+      </a>
+    </li>
+  </ul>
+
+  <p><strong>Local Organizations</strong></p>
+  <ul>
+    <li>
+      Many Helping Hands 365 —
+      <a href="https://manyhelpinghands365.org/" target="_blank" rel="noopener">
+        manyhelpinghands365.org
+      </a>
+    </li>
+    <li>
+      Giving Joy —
+      <a href="https://givingjoygrants.org/" target="_blank" rel="noopener">
+        givingjoygrants.org
+      </a>
+    </li>
+    <li>
+      YWCA Cambridge —
+      <a href="https://ywcacam.org/" target="_blank" rel="noopener">
+        ywcacam.org
+      </a>
+    </li>
+  </ul>
+</section>
+
+  <footer>
+    <div class="container">© Piper Oren</div>
+  </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Piper Oren</title>
+
+  <meta name="description" content="Behavioral and policy researcher studying how evidence, behavior, and institutions shape adaptive and inclusive public systems.">
+
+  <meta property="og:title" content="Piper Oren">
+  <meta property="og:description" content="Research at the intersection of behavioral science, economics, and public policy.">
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --max-width: 1100px;
+      --muted: #6b6b6b;
+      --accent: #3E2C66;
+      --bg-card: #fbfbfc;
+      --text: #1a1a1a;
+      --lead-size: 1.05rem;
+      --base-size: 16px;
+      --radius: 10px;
+    }
+
+    html { box-sizing: border-box; }
+    *, *:before, *:after { box-sizing: inherit; }
+
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: var(--text);
+      font-size: var(--base-size);
+      line-height: 1.7;
+      background: #ffffff;
+    }
+
+    .container, .header-inner, footer > div {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    header { border-bottom: 1px solid #eee; background: #fff; }
+    .header-inner {
+      display:flex; align-items:center; gap:1rem;
+      justify-content:space-between; padding:0.75rem 1rem;
+    }
+
+    .layout {
+      display:grid;
+      grid-template-columns: 300px 1fr;
+      gap: 2rem;
+      padding:2rem 1rem;
+      align-items:start;
+      max-width: calc(var(--max-width) + 2rem);
+      margin: 0 auto;
+    }
+
+    aside {
+      border-right: 1px solid #f5f5f5;
+      padding-right:1rem;
+      text-align:right;
+    }
+
+    main { padding-left:1rem; }
+
+    @media (max-width: 860px){
+      .layout { grid-template-columns: 1fr; }
+      aside {
+        border-right: none;
+        padding-right:0;
+        padding-bottom:1rem;
+        border-bottom:1px solid #f5f5f5;
+      }
+      main { padding-left:0; }
+    }
+
+    aside h1 {
+      margin:0 0 0.5rem 0;
+      font-size:1.25rem;
+      color:var(--accent);
+    }
+
+    .links {
+      display:flex;
+      flex-direction:column;
+      align-items:flex-end;
+      gap:0.4rem;
+    }
+
+    .links a {
+      color:var(--accent);
+      font-weight:600;
+      text-decoration:none;
+    }
+
+    .links a:hover { text-decoration:underline; }
+
+    #research-focus h2 {
+      margin-top:0.25rem;
+      font-size:1.4rem;
+      color:var(--accent);
+    }
+
+    #research-focus p {
+      margin:0 0 1.25rem 0;
+      max-width:70ch;
+      color:#222;
+      font-size: var(--lead-size);
+    }
+
+    #research-focus ul {
+      list-style:none;
+      padding:0;
+      margin:1rem 0;
+      max-width:70ch;
+    }
+
+    #research-focus li {
+      margin-bottom:1.25rem;
+    }
+
+    #research-focus li h3 {
+      margin:0 0 0.25rem 0;
+      font-size:1.05rem;
+      color:var(--accent);
+      font-weight:700;
+    }
+
+    #research-focus li p {
+      margin:0;
+    }
+
+    footer {
+      border-top:1px solid #f0f0f0;
+      padding:1.25rem 1rem;
+      color:var(--muted);
+      font-size:0.9rem;
+      text-align:center;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content" style="position:absolute;left:-9999px;">Skip to content</a>
+
+  <header>
+    <div class="header-inner container"></div>
+  </header>
+
+  <div class="layout" role="main" id="main-content">
+    <aside aria-labelledby="profile-title">
+      <h1 id="profile-title">Piper Oren</h1>
+      <div class="links" aria-label="Contact links">
+        <a href="https://www.linkedin.com/in/piper-oren/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.juliaminson.com/lab" target="_blank" rel="noopener">Constructive Disagreement Lab</a>
+      </div>
+    </aside>
+
+    <section id="research-focus" aria-labelledby="focus-title">
+      <h2 id="focus-title">Research & Policy Interests</h2>
+      <p>
+        I study how people and institutions make decisions, how those decisions become policy, and what helps systems learn and improve.
+        My work brings together behavioral science, policy design, and institutional reform.
+        I’m interested in how evidence and judgment interact in real settings and what helps organizations use knowledge to act more effectively and equitably.
+      </p>
+      <p>
+        I focus on the systems that shape how governments and communities make choices—how evidence moves through them, how capacity is built, and how people experience the outcomes.
+        My goal is to help design decision environments that connect research, implementation, and trust.
+      </p>
+
+      <ul>
+        <li>
+          <h3>Decision Systems</h3>
+          <p>I study the behavioral and organizational factors that shape how people and institutions make choices. My work looks at how evidence, incentives, and context influence judgment and how decision quality can improve when systems are designed with behavior in mind.</p>
+        </li>
+
+        <li>
+          <h3>Institutional Capacity and Learning</h3>
+          <p>I’m interested in how governments and organizations build the ability to learn from experience. That includes how they create space for experimentation, interpret feedback, and balance learning with accountability. I study what makes institutional change possible and how capacity grows or erodes over time.</p>
+        </li>
+
+        <li>
+          <h3>Evidence Systems</h3>
+          <p>I study how research and data move through policy environments. This includes how evidence is collected, interpreted, and applied, and what supports or blocks that process. I’m especially interested in how credibility, legitimacy, and trust affect whether evidence is used at all.</p>
+        </li>
+
+        <li>
+          <h3>Equity and Opportunity Systems</h3>
+          <p>I look at how policy design shapes access to opportunity—who benefits, who is left out, and why. My work examines the structural and behavioral barriers that appear in education, labor, and social programs, and what it would take to make these systems more inclusive and responsive.</p>
+        </li>
+
+        <li>
+          <h3>System Reform and Design</h3>
+          <p>I’m interested in how behavioral research can help governments and institutions adapt. My work connects insights about human behavior, learning, and feedback to the design of policy systems that are more fair, transparent, and capable of change.</p>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">© Piper Oren</div>
+  </footer>
+</body>
+</html>
