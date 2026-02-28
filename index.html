@@ -1,218 +1,446 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Piper Oren</title>
+<!DOCTYPE html><html lang="en"><head>  <meta charset="utf-8" />  <meta name="viewport" content="width=device-width, initial-scale=1" />  <title>Piper Oren</title>  <meta name="description" content="Research at the intersection of behavioral science, economics, and public institutions.">  <meta property="og:title" content="Piper Oren">  <meta property="og:description" content="Work at the intersection of behavioral science, economics, and public institutions, with a focus on evidence use and implementation.">  <meta property="og:type" content="website">  <style>    :root {      --bg: #faf9f6;      --surface: #f2f0ea;      --text: #1a1916;      --muted: #7a7568;      --accent: #3a2d5e;      --accent-soft: #eceaf4;      --border: #e2dfd6;      --radius: 5px;      --font: "Times New Roman", Times, serif;    }    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }    html { scroll-behavior: smooth; }    body {      font-family: var(--font);      background: var(--bg);      color: var(--text);      font-size: 16px;      line-height: 1.75;      min-height: 100vh;    }    .page {      display: grid;      grid-template-columns: 240px 1fr;      min-height: 100vh;    }    /* ── SIDEBAR ── */    .sidebar {      position: sticky;      top: 0;      height: 100vh;      padding: 3rem 1.6rem 2rem;      border-right: 1px solid var(--border);      display: flex;      flex-direction: column;      gap: 2rem;      background: var(--bg);      overflow-y: auto;    }    .sidebar-name {      font-size: 1.55rem;      font-weight: normal;      font-style: italic;      color: var(--accent);      line-height: 1.25;    }    .sidebar-title {      font-size: 0.78rem;      letter-spacing: 0.1em;      text-transform: uppercase;      color: var(--muted);      margin-top: 0.35rem;      font-style: normal;    }    .sidebar-nav {      display: flex;      flex-direction: column;      gap: 0.15rem;    }    .nav-btn {      background: none;      border: none;      cursor: pointer;      text-align: left;      padding: 0.5rem 0.75rem;      border-radius: var(--radius);      font-family: var(--font);      font-size: 0.93rem;      color: var(--muted);      transition: all 0.15s ease;      position: relative;    }    .nav-btn::before {      content: '';      position: absolute;      left: 0; top: 50%;      transform: translateY(-50%) scaleY(0);      width: 2px; height: 55%;      background: var(--accent);      border-radius: 2px;      transition: transform 0.15s ease;    }    .nav-btn:hover { color: var(--text); background: var(--surface); }    .nav-btn.active { color: var(--accent); background: var(--accent-soft); font-style: italic; }    .nav-btn.active::before { transform: translateY(-50%) scaleY(1); }    .sidebar-links {      margin-top: auto;      display: flex;      flex-direction: column;      gap: 0.45rem;    }    .sidebar-links a {      font-size: 0.8rem;      color: var(--muted);      text-decoration: none;      transition: color 0.15s;      font-style: italic;    }    .sidebar-links a:hover { color: var(--accent); }    /* ── MAIN ── */    main {      padding: 3rem 3.5rem 4rem;      max-width: 820px;    }    .tab-panel { display: none; animation: fadeUp 0.22s ease; }    .tab-panel.active { display: block; }    @keyframes fadeUp {      from { opacity: 0; transform: translateY(7px); }      to   { opacity: 1; transform: translateY(0); }    }    /* ── SHARED ── */    .section-eyebrow {      font-size: 0.72rem;      letter-spacing: 0.14em;      text-transform: uppercase;      color: var(--muted);      margin-bottom: 1.4rem;      font-style: normal;    }    /* ── ABOUT ── */    .about-lead {      font-size: 1.42rem;      font-weight: normal;      font-style: italic;      line-height: 1.5;      color: var(--text);      margin-bottom: 1.8rem;      max-width: 54ch;    }    .about-body p {      font-size: 0.97rem;      color: #3a3830;      margin-bottom: 1rem;      max-width: 62ch;    }    .email-link {      color: var(--accent);      text-decoration: none;      border-bottom: 1px solid transparent;      transition: border-color 0.15s;    }    .email-link:hover { border-color: var(--accent); }    /* ── EXPERIENCE TIMELINE ── */    .timeline { position: relative; padding-left: 1.6rem; }    .timeline::before {      content: '';      position: absolute;      left: 0; top: 0.4rem; bottom: 0.4rem;      width: 1px;      background: var(--border);    }    .tl-year-group { margin-bottom: 2.6rem; }    .tl-year {      font-size: 0.72rem;      letter-spacing: 0.14em;      text-transform: uppercase;      color: var(--muted);      margin-bottom: 1rem;      padding-left: 0.6rem;      position: relative;    }    .tl-year::before {      content: '';      position: absolute;      left: -1.6rem; top: 50%;      transform: translateY(-50%);      width: 7px; height: 7px;      background: var(--accent);      border-radius: 50%;    }    .tl-item {      padding: 0.85rem 0.8rem 0.85rem 0.6rem;      margin-bottom: 0.4rem;      border-radius: var(--radius);      transition: background 0.15s;    }    .tl-item:hover { background: var(--surface); }    .tl-item-header {      display: flex;      justify-content: space-between;      align-items: baseline;      flex-wrap: wrap;      gap: 0.5rem;      margin-bottom: 0.15rem;    }    .tl-role { font-size: 0.95rem; color: var(--text); }    .tl-date { font-size: 0.78rem; color: var(--muted); font-style: italic; white-space: nowrap; }    .tl-org { font-size: 0.85rem; color: var(--accent); font-style: italic; margin-bottom: 0.3rem; }    .tl-desc { font-size: 0.86rem; color: #55524a; line-height: 1.65; }    .tl-desc ul { padding-left: 1.1em; margin-top: 0.2rem; }    .tl-desc li { margin-bottom: 0.2rem; }    .tl-section-header {      font-size: 1.05rem;      font-style: italic;      color: var(--accent);      margin: 2.4rem 0 1rem 0;      padding-bottom: 0.4rem;      border-bottom: 1px solid var(--border);    }    .tl-section-header:first-child { margin-top: 0; }    /* ── PLACES TAB ── */    .places-intro {      font-size: 0.97rem;      color: #3a3830;      margin-bottom: 2rem;      max-width: 60ch;      font-style: italic;    }    .places-group { margin-bottom: 2.2rem; }    .places-group-label {      font-size: 0.72rem;      letter-spacing: 0.14em;      text-transform: uppercase;      color: var(--muted);      margin-bottom: 0.8rem;      padding-bottom: 0.5rem;      border-bottom: 1px solid var(--border);    }    .places-grid {      display: grid;      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));      gap: 0.6rem;    }    .place-card {      background: white;      border: 1px solid var(--border);      border-radius: var(--radius);      padding: 0.9rem 1rem;      transition: all 0.18s ease;    }    a.place-card {      text-decoration: none;      display: block;    }    .place-card:hover, a.place-card:hover {      border-color: var(--accent);      box-shadow: 0 3px 12px rgba(58,45,94,0.08);      transform: translateY(-2px);    }    .place-card-name { font-size: 0.88rem; color: var(--text); line-height: 1.35; margin-bottom: 0.2rem; }    .place-card-note { font-size: 0.76rem; color: var(--muted); font-style: italic; }    .volunteer-note {      margin-top: 1.2rem;      padding: 0.9rem 1.1rem;      background: var(--surface);      border-radius: var(--radius);      border-left: 2px solid var(--accent);      font-size: 0.85rem;      color: var(--muted);      font-style: italic;    }    .volunteer-note a { color: var(--accent); text-decoration: none; }    .volunteer-note a:hover { text-decoration: underline; }    /* ── EARLY GIGS ── */    .gigs-intro {      font-size: 0.97rem;      color: #3a3830;      margin-bottom: 2rem;      max-width: 60ch;      font-style: italic;    }    .gigs-timeline { position: relative; padding-left: 1.6rem; }    .gigs-timeline::before {      content: '';      position: absolute;      left: 0; top: 0.4rem; bottom: 0.4rem;      width: 1px;      background: var(--border);    }    .gig-era { margin-bottom: 2.4rem; }    .gig-era-label {      font-size: 0.72rem;      letter-spacing: 0.14em;      text-transform: uppercase;      color: var(--muted);      margin-bottom: 0.9rem;      padding-left: 0.6rem;      position: relative;    }    .gig-era-label::before {      content: '';      position: absolute;      left: -1.6rem; top: 50%;      transform: translateY(-50%);      width: 7px; height: 7px;      background: var(--bg);      border: 2px solid var(--accent);      border-radius: 50%;    }    .gig-item {      padding: 0.65rem 0.6rem;      border-radius: var(--radius);      transition: background 0.15s;      margin-bottom: 0.2rem;    }    .gig-item:hover { background: var(--surface); }    .gig-title { font-size: 0.93rem; color: var(--text); }    .gig-org { font-size: 0.83rem; color: var(--accent); font-style: italic; margin-top: 0.1rem; }    .gig-desc { font-size: 0.83rem; color: var(--muted); margin-top: 0.15rem; line-height: 1.55; }    /* ── FOOTER ── */    .footer {      font-size: 0.78rem;      color: var(--muted);      font-style: italic;      padding: 1.2rem 2rem;      border-top: 1px solid var(--border);    }    /* ── RESPONSIVE ── */    @media (max-width: 720px) {      .page { grid-template-columns: 1fr; }      .sidebar {        position: static;        height: auto;        padding: 1.8rem 1.4rem 1.2rem;        border-right: none;        border-bottom: 1px solid var(--border);        flex-direction: row;        flex-wrap: wrap;        align-items: center;        gap: 1rem;      }      .sidebar-nav { flex-direction: row; flex-wrap: wrap; }      .sidebar-links { margin-top: 0; flex-direction: row; gap: 1rem; }      main { padding: 1.8rem 1.2rem; }      .places-grid { grid-template-columns: 1fr 1fr; }    }  </style></head><body><a href="#main-content" style="position:absolute;left:-9999px;top:0;">Skip to content</a><div class="page">  <!-- SIDEBAR -->  <aside class="sidebar">    <div>      <div class="sidebar-name">Piper Oren</div>      <div class="sidebar-title">Policy &amp; Behavioral Research</div>    </div>    <nav class="sidebar-nav" aria-label="Page sections">      <button class="nav-btn active" data-tab="about">About</button>      <button class="nav-btn" data-tab="experience">Experience</button>      <button class="nav-btn" data-tab="places">Places &amp; Things</button>      <button class="nav-btn" data-tab="earlygigs">Not on My Resume</button>    </nav>    <div class="sidebar-links">      <a href="https://www.linkedin.com/in/piper-oren/" target="_blank" rel="noopener">LinkedIn ↗</a>      <a href="https://www.juliaminson.com/lab" target="_blank" rel="noopener">Constructive Disagreement Lab ↗</a>    </div>  </aside>  <!-- MAIN -->  <main id="main-content">
 
-  <meta name="description" content="Research focused on how public institutions use evidence in practice, with an emphasis on evaluation capacity, decision-making environments, and policy implementation.">
-
-  <meta property="og:title" content="Piper Oren">
-  <meta property="og:description" content="Work at the intersection of behavioral science, economics, and public institutions, with a focus on evidence use and implementation.">
-  <meta property="og:type" content="website">
-
-  <style>
-    :root {
-      --max-width: 1100px;
-      --muted: #6b6b6b;
-      --accent: #3E2C66;
-      --bg-card: #fbfbfc;
-      --text: #1a1a1a;
-      --lead-size: 1.05rem;
-      --base-size: 16px;
-      --radius: 10px;
-    }
-
-    html { box-sizing: border-box; }
-    *, *:before, *:after { box-sizing: inherit; }
-
-    body {
-      margin: 0;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      color: var(--text);
-      font-size: var(--base-size);
-      line-height: 1.7;
-      background: #ffffff;
-    }
-
-    .container, .header-inner, footer > div {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 1rem;
-    }
-
-    header { border-bottom: 1px solid #eee; background: #fff; }
-    .header-inner {
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:0.75rem 1rem;
-    }
-
-    .layout {
-      display:grid;
-      grid-template-columns: 300px 1fr;
-      gap: 2rem;
-      padding:2rem 1rem;
-      align-items:start;
-      max-width: calc(var(--max-width) + 2rem);
-      margin: 0 auto;
-    }
-
-    aside {
-      border-right: 1px solid #f5f5f5;
-      padding-right:1rem;
-      text-align:right;
-    }
-
-    @media (max-width: 860px){
-      .layout { grid-template-columns: 1fr; }
-      aside {
-        border-right: none;
-        padding-right:0;
-        padding-bottom:1rem;
-        border-bottom:1px solid #f5f5f5;
-        text-align:left;
-      }
-      .links { align-items:flex-start; }
-    }
-
-    aside h1 {
-      margin:0 0 0.5rem 0;
-      font-size:1.25rem;
-      color:var(--accent);
-    }
-
-    .links {
-      display:flex;
-      flex-direction:column;
-      align-items:flex-end;
-      gap:0.4rem;
-    }
-
-    .links a {
-      color:var(--accent);
-      font-weight:600;
-      text-decoration:none;
-    }
-
-    .links a:hover { text-decoration:underline; }
-
-    #research-focus h2 {
-      margin-top:0.25rem;
-      font-size:1.4rem;
-      color:var(--accent);
-    }
-
-    #research-focus p {
-      margin:0 0 1.25rem 0;
-      max-width:70ch;
-      color:#222;
-      font-size: var(--lead-size);
-    }
-
-    footer {
-      border-top:1px solid #f0f0f0;
-      padding:1.25rem 1rem;
-      color:var(--muted);
-      font-size:0.9rem;
-      text-align:center;
-    }
-  </style>
-</head>
-
-<body>
-  <a class="skip-link" href="#main-content" style="position:absolute;left:-9999px;">Skip to content</a>
-
-  <header>
-    <div class="header-inner container"></div>
-  </header>
-
-  <div class="layout" role="main" id="main-content">
-    <aside aria-labelledby="profile-title">
-      <h1 id="profile-title">Piper Oren</h1>
-      <div class="links" aria-label="Contact links">
-        <a href="https://www.linkedin.com/in/piper-oren/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://www.juliaminson.com/lab" target="_blank" rel="noopener">Constructive Disagreement Lab</a>
+    <!-- ══ ABOUT ══ -->
+    <div class="tab-panel active" id="tab-about">
+      <p class="section-eyebrow">About</p>
+      <p class="about-lead">(Under Construction) :) Work at the intersection of behavioral science, economics, and public institutions — focused on how evidence shapes policy in practice.</p>
+      <div class="about-body">
+        <p>When I encountered the behavioral dimensions of economics and international relations, I was drawn to the potential of research to update existing models to more closely reflect human behavior and, in turn, improve policy design and impact. I pursued work in behavioral research labs to study individual- and interpersonal-level mechanisms, with the goal of later testing and adapting these insights for applied field settings.</p>
+        <p>Alongside my professional experience, I've completed graduate-level coursework at the intersection of research and policy and am currently one of 20 selected participants in the 2026 Max Bell School of Public Policy Evaluation Capacity Case Challenge.</p>
+        <p>I'm looking to continue this work through graduate study or applied policy roles focused on improving both policies and the processes that shape them.</p>
+        <p>Outside of the local library, you can find me exploring the outdoors or supporting community gardens and local nonprofits.</p>
+        <p>Please feel free to reach out — <a href="/cdn-cgi/l/email-protection#2c5c455c495e02435e49426c4b414d4540024f4341" class="email-link"><span class="__cf_email__" data-cfemail="d3a3baa3b6a1fdbca1b6bd93b4beb2babffdb0bcbe">[email&#160;protected]</span></a></p>
       </div>
-    </aside>
+    </div>
 
-<section id="research-focus" aria-labelledby="focus-title">
-  <h2 id="focus-title">About</h2>
+    <!-- ══ EXPERIENCE ══ -->
+    <div class="tab-panel" id="tab-experience">
+      <p class="section-eyebrow">(Under Construction) :) Experience</p>
+      <!-- EDUCATION -->
+      <div class="tl-section-header">Education</div>
+      <div class="timeline">
+        <div class="tl-year-group">
+          <div class="tl-year">2025 – Present</div>
+          <div class="tl-item">
+            <div class="tl-item-header">
+              <span class="tl-role">Graduate Coursework</span>
+              <span class="tl-date">Aug. 2025 – Present</span>
+            </div>
+            <div class="tl-org">Harvard University Extension School</div>
+            <div class="tl-desc">Policy for Impact · Intermediate Statistics · Writing in the Social Sciences</div>
+          </div>
+        </div>
+        <div class="tl-year-group">
+          <div class="tl-year">2016 – 2020</div>
+          <div class="tl-item">
+            <div class="tl-item-header">
+              <span class="tl-role">Bachelor of Arts — Economics &amp; International Relations</span>
+              <span class="tl-date">May 2020</span>
+            </div>
+            <div class="tl-org">Connecticut College, New London, CT</div>
+            <div class="tl-desc">GPA: 3.593 · Chair's Prize in Economics · Dean's Honors · Honors Thesis in Experimental/Behavioral Economics</div>
+          </div>
+        </div>
+      </div>
+      <!-- TRAINING -->
+      <div class="tl-section-header">Training</div>
+      <div class="timeline">
+        <div class="tl-year-group">
+          <div class="tl-year">2026</div>
+          <div class="tl-item">
+            <div class="tl-item-header">
+              <span class="tl-role">Evaluation Capacity Case Challenge (EC3)</span>
+              <span class="tl-date">Jan. 2026 – Present</span>
+            </div>
+            <div class="tl-org">Max Bell School of Public Policy, McGill University</div>
+            <div class="tl-desc">Selected as 1 of 20 participants. Developing recommendations to strengthen evaluation capacity and evidence use within public-sector organizations.</div>
+          </div>
+        </div>
+        <div class="tl-year-group">
+          <div class="tl-year">2025</div>
+          <div class="tl-item">
+            <div class="tl-item-header">
+              <span class="tl-role">Research Staff Training for Randomized Evaluations</span>
+              <span class="tl-date">Aug. 2025</span>
+            </div>
+            <div class="tl-org">J-PAL North America, Cambridge, MA</div>
+            <div class="tl-desc">Strengthened skills in project management, ethics, data quality, and clear, inclusive communication.</div>
+          </div>
+        </div>
+        <div class="tl-year-group">
+          <div class="tl-year">2023</div>
+          <div class="tl-item">
+            <div class="tl-item-header">
+              <span class="tl-role">Data and Policy Summer Scholar</span>
+              <span class="tl-date">Jun. – Aug. 2023</span>
+            </div>
+            <div class="tl-org">Harris School of Public Policy, University of Chicago</div>
+            <div class="tl-desc">Analyzed displacement using geospatial and survey data to generate policy recommendations for targeted UNHCR aid. Merit Scholarship · Community Engagement Award · International Policy Capstone (98%)</div>
+          </div>
+        </div>
+      </div>
+      <!-- PROFESSIONAL EXPERIENCE -->
+      <div class="tl-section-header">Professional Experience</div>
+      <div class="timeline">
+        <div class="tl-year-group">
+          <div class="tl-year">2022 – Present</div>
+          <div class="tl-item">
+            <div class="tl-item-header">
+              <span class="tl-role">Behavioral Research Coordinator</span>
+              <span class="tl-date">Aug. 2022 – Present</span>
+            </div>
+            <div class="tl-org">Harvard Business School, Division of Research and Faculty Development</div>
+            <div class="tl-desc">
+              <ul>
+                <li>Build and iterate on the operating infrastructure for behavioral research services to support 40+ projects annually</li>
+                <li>Manage budgets, vendor contracts, and coordination across external partners and 9+ HBS faculty departments</li>
+                <li>Develop systems for project tracking, participant management, data collection, and compliance</li>
+                <li>Standardize protocols and train 15+ staff to ensure consistent, compliant, high-quality execution</li>
+                <li>Improve billing and workflows to increase transparency and raise $41K in additional lab revenue from FY23–FY25</li>
+                <li>Co-design applied experiments on trust, AI collaboration, and organizational behavior</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tl-year-group">
+          <div class="tl-year">2021 – 2022</div>
+          <div class="tl-item">
+            <div class="tl-item-header">
+              <span class="tl-role">Lab Coordinator</span>
+              <span class="tl-date">Jul. 2021 – Jul. 2022</span>
+            </div>
+            <div class="tl-org">MIT Sloan School of Management, Behavioral and Policy Sciences</div>
+            <div class="tl-desc">
+              <ul>
+                <li>Expanded lab capacity by building shared systems supporting consistent execution across 27 faculty projects</li>
+                <li>Coordinated applied behavioral studies spanning autonomous vehicle policy, gendered impacts of AI, and identity</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tl-year-group">
+          <div class="tl-year">2020 – 2021</div>
+          <div class="tl-item">
+            <div class="tl-item-header">
+              <span class="tl-role">Research Assistant</span>
+              <span class="tl-date">Aug. 2020 – Jul. 2021</span>
+            </div>
+            <div class="tl-org">Harvard Kennedy School, Dr. Julia Minson — Constructive Disagreement Lab</div>
+            <div class="tl-desc">
+              <ul>
+                <li>Designed and deployed 19 experiments on conversational receptiveness supporting constructive disagreement</li>
+                <li>Analyzed information-seeking and advice-taking behavior to identify strategies for engaging across opposing views</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tl-year-group">
+          <div class="tl-year">2019</div>
+          <div class="tl-item">
+            <div class="tl-item-header">
+              <span class="tl-role">Research Intern</span>
+              <span class="tl-date">Jun. – Aug. 2019</span>
+            </div>
+            <div class="tl-org">Duke University, Center for Advanced Hindsight</div>
+            <div class="tl-desc">
+              <ul>
+                <li>Synthesized 200+ interviews to identify themes and inform program iteration in a women's health savings program in Kenya</li>
+                <li>Contributed to development of interventions to reduce sedentary behavior in the Netherlands and U.S.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tl-year-group">
+          <div class="tl-year">2018 – 2019</div>
+          <div class="tl-item">
+            <div class="tl-item-header">
+              <span class="tl-role">Research Assistant</span>
+              <span class="tl-date">Dec. 2018 – Feb. 2019</span>
+            </div>
+            <div class="tl-org">Harvard Kennedy School, Harvard Decision Science Laboratory</div>
+            <div class="tl-desc">Diagnosed onboarding gaps and created a lab manual to improve training and preserve institutional knowledge.</div>
+          </div>
+        </div>
+      </div>
+      <!-- PUBLIC SERVICE -->
+      <div class="tl-section-header">Public Service</div>
+      <div class="timeline">
+        <div class="tl-year-group">
+          <div class="tl-year">2026</div>
+          <div class="tl-item">
+            <div class="tl-item-header">
+              <span class="tl-role">Incoming Governance Board Member</span>
+              <span class="tl-date">Feb. 2026 – Present</span>
+            </div>
+            <div class="tl-org">YWCA of Cambridge</div>
+            <div class="tl-desc">Providing strategic direction to develop programs at Cambridge's largest affordable housing provider.</div>
+          </div>
+        </div>
+        <div class="tl-year-group">
+          <div class="tl-year">2025</div>
+          <div class="tl-item">
+            <div class="tl-item-header">
+              <span class="tl-role">Member &amp; Organizer</span>
+              <span class="tl-date">Sep. – Dec. 2025</span>
+            </div>
+            <div class="tl-org">Future Female Leaders Bootcamp + Support Sessions</div>
+            <div class="tl-desc">Co-led workshops and working sessions supporting prospective female MC/MPA applicants.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-item-header">
+              <span class="tl-role">Grant Reviewer</span>
+              <span class="tl-date">Aug. – Dec. 2025</span>
+            </div>
+            <div class="tl-org">Giving Joy — Micro Grants for Women Entrepreneurs</div>
+            <div class="tl-desc">Reviewed grant applications for international women entrepreneurs and provided funding recommendations.</div>
+          </div>
+        </div>
+        <div class="tl-year-group">
+          <div class="tl-year">2022 – Present</div>
+          <div class="tl-item">
+            <div class="tl-item-header">
+              <span class="tl-role">Volunteer</span>
+              <span class="tl-date">Jan. 2022 – Present</span>
+            </div>
+            <div class="tl-org">Many Helping Hands 365</div>
+            <div class="tl-desc">Support community and civic engagement projects, outreach events, and service days across Cambridge.</div>
+          </div>
+        </div>
+        <div class="tl-year-group">
+          <div class="tl-year">2018 – Present</div>
+          <div class="tl-item">
+            <div class="tl-item-header">
+              <span class="tl-role">Volunteer</span>
+              <span class="tl-date">Sep. 2018 – Present</span>
+            </div>
+            <div class="tl-org">Community Gardens &amp; Urban Agriculture — VT, CT, and MA</div>
+            <div class="tl-desc">Assist with sustainable agriculture projects, community gardens, and food-access programs.</div>
+          </div>
+        </div>
+        <div class="tl-year-group">
+          <div class="tl-year">Sprout Garden</div>
+          <div class="tl-item">
+            <div class="tl-item-header">
+              <span class="tl-role">Volunteer</span>
+              <span class="tl-date">[dates]</span>
+            </div>
+            <div class="tl-org">Sprout Garden</div>
+            <div class="tl-desc">[Add a line here]</div>
+          </div>
+        </div>
+      </div>
+      <!-- ACADEMIC SERVICE -->
+      <div class="tl-section-header">Academic Service</div>
+      <div class="timeline">
+        <div class="tl-year-group">
+          <div class="tl-year">2024</div>
+          <div class="tl-item">
+            <div class="tl-item-header">
+              <span class="tl-role">Reviewer</span>
+              <span class="tl-date">Dec. 2024</span>
+            </div>
+            <div class="tl-org">Practical Human Experiments: The Guide to Science with People without Going Mad</div>
+            <div class="tl-desc"></div>
+          </div>
+        </div>
+        <div class="tl-year-group">
+          <div class="tl-year">2022 – 2024</div>
+          <div class="tl-item">
+            <div class="tl-item-header">
+              <span class="tl-role">Annual Reviewer</span>
+              <span class="tl-date">2022, 2023, 2024</span>
+            </div>
+            <div class="tl-org">Behavioral Economics Guide</div>
+            <div class="tl-desc"></div>
+          </div>
+        </div>
+        <div class="tl-year-group">
+          <div class="tl-year">2020</div>
+          <div class="tl-item">
+            <div class="tl-item-header">
+              <span class="tl-role">Team Member</span>
+              <span class="tl-date">Mar. – Sep. 2020</span>
+            </div>
+            <div class="tl-org">Survey of COVID-19 Responses to Understand Behaviour (SCRUB)</div>
+            <div class="tl-desc"></div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <p>Hello!</p>
+    <!-- ══ PLACES & THINGS ══ -->
+    <div class="tab-panel" id="tab-places">
+      <p class="section-eyebrow">(Under Construction) :) Places &amp; Things I Love</p>
+      <p class="places-intro">A running, very incomplete list of places, organizations, and things worth knowing about — organized by where they are.</p>
 
-  <p>
-    When I encountered the behavioral dimensions of economics and international relations, I was drawn to the potential of research to update existing models to more closely reflect human behavior and, in turn, improve policy design and impact. I pursued work in behavioral research labs to study individual- and interpersonal-level mechanisms, with the goal of later testing and adapting these insights for applied field settings. Alongside my professional experience, I’ve completed graduate-level coursework at the intersection of research and policy and am currently applying these skills as one of 20 selected participants in the 2026 Max Bell School of Public Policy Evaluation Capacity Case Challenge.
-  </p>
+      <div class="places-group">
+        <div class="places-group-label">Cambridge &amp; Somerville — Places</div>
+        <div class="places-grid">
+          <div class="place-card">
+            <div class="place-card-name">Your favorite coffee shop</div>
+            <div class="place-card-note">Add a short note</div>
+          </div>
+          <div class="place-card">
+            <div class="place-card-name">A bookstore you love</div>
+            <div class="place-card-note">Add a short note</div>
+          </div>
+          <div class="place-card">
+            <div class="place-card-name">A park or trail</div>
+            <div class="place-card-note">Add a short note</div>
+          </div>
+          <div class="place-card">
+            <div class="place-card-name">A restaurant or spot</div>
+            <div class="place-card-note">Add a short note</div>
+          </div>
+        </div>
+      </div>
 
-  <p>
-    Now, I am looking to continue this work through graduate study or applied policy roles focused on improving both policies and the processes that shape them.
-  </p>
+      <div class="places-group">
+        <div class="places-group-label">Cambridge &amp; Somerville — Organizations</div>
+        <div class="places-grid">
+          <a class="place-card" href="https://www.thegrowingcenter.org/" target="_blank" rel="noopener">
+            <div class="place-card-name">Somerville Community Growing Center</div>
+            <div class="place-card-note">thegrowingcenter.org ↗</div>
+          </a>
+          <a class="place-card" href="https://groundworksomerville.org/" target="_blank" rel="noopener">
+            <div class="place-card-name">Groundwork Somerville</div>
+            <div class="place-card-note">groundworksomerville.org ↗</div>
+          </a>
+          <a class="place-card" href="https://manyhelpinghands365.org/" target="_blank" rel="noopener">
+            <div class="place-card-name">Many Helping Hands 365</div>
+            <div class="place-card-note">manyhelpinghands365.org ↗</div>
+          </a>
+          <a class="place-card" href="https://givingjoygrants.org/" target="_blank" rel="noopener">
+            <div class="place-card-name">Giving Joy</div>
+            <div class="place-card-note">givingjoygrants.org ↗</div>
+          </a>
+          <a class="place-card" href="https://ywcacam.org/" target="_blank" rel="noopener">
+            <div class="place-card-name">YWCA Cambridge</div>
+            <div class="place-card-note">ywcacam.org ↗</div>
+          </a>
+        </div>
+      </div>
 
-  <p>
-    Outside of the local library, you can find me exploring the outdoors or supporting community gardens and local nonprofits (some listed below).
-  </p>
+      <div class="places-group">
+        <div class="places-group-label">Vermont — Places</div>
+        <div class="places-grid">
+          <div class="place-card">
+            <div class="place-card-name">A trail or mountain</div>
+            <div class="place-card-note">Add a short note</div>
+          </div>
+          <div class="place-card">
+            <div class="place-card-name">A farm stand or market</div>
+            <div class="place-card-note">Add a short note</div>
+          </div>
+          <div class="place-card">
+            <div class="place-card-name">A local spot</div>
+            <div class="place-card-note">Add a short note</div>
+          </div>
+        </div>
+      </div>
 
-  <p>
-    Please feel free to reach out! <strong>piper.oren(at)gmail(dot)com</strong>
-  </p>
+      <div class="places-group">
+        <div class="places-group-label">Things Worth Knowing About</div>
+        <div class="places-grid">
+          <div class="place-card">
+            <div class="place-card-name">An event or festival</div>
+            <div class="place-card-note">Add a short note</div>
+          </div>
+          <div class="place-card">
+            <div class="place-card-name">A newsletter or read</div>
+            <div class="place-card-note">Add a short note</div>
+          </div>
+          <div class="place-card">
+            <div class="place-card-name">A local business</div>
+            <div class="place-card-note">Add a short note</div>
+          </div>
+        </div>
+      </div>
 
-  <p><strong>Community Gardens & Urban Agriculture</strong></p>
-  <ul>
-    <li>
-      Somerville Community Growing Center —
-      <a href="https://www.thegrowingcenter.org/" target="_blank" rel="noopener">
-        thegrowingcenter.org
-      </a>
-    </li>
-    <li>
-      Groundwork Somerville —
-      <a href="https://groundworksomerville.org/" target="_blank" rel="noopener">
-        groundworksomerville.org
-      </a>
-    </li>
-  </ul>
+      <div class="volunteer-note">
+        Want to get involved locally? <a href="https://www.cambridgevolunteers.org/" target="_blank" rel="noopener">Cambridge Volunteers</a> is a great place to start — or look up organizations in your own neighborhood.
+      </div>
+    </div>
 
-  <p><strong>Local Organizations</strong></p>
-  <ul>
-    <li>
-      Many Helping Hands 365 —
-      <a href="https://manyhelpinghands365.org/" target="_blank" rel="noopener">
-        manyhelpinghands365.org
-      </a>
-    </li>
-    <li>
-      Giving Joy —
-      <a href="https://givingjoygrants.org/" target="_blank" rel="noopener">
-        givingjoygrants.org
-      </a>
-    </li>
-    <li>
-      YWCA Cambridge —
-      <a href="https://ywcacam.org/" target="_blank" rel="noopener">
-        ywcacam.org
-      </a>
-    </li>
-  </ul>
+    <!-- ══ NOT ON MY RESUME ══ -->
+    <div class="tab-panel" id="tab-earlygigs">
+      <p class="section-eyebrow">(Under Construction) :) What's Not on My Resume</p>
+      <p class="gigs-intro">The jobs, roles, and years that don't make it to my final resume or CV, but are fun to know.</p>
+      <div class="gigs-timeline">
+        <div class="gig-era">
+          <div class="gig-era-label">College — Connecticut College (2016–2020)</div>
+          <div class="gig-item">
+            <div class="gig-title">Barista</div>
+            <div class="gig-org">Coffee Grounds</div>
+            <div class="gig-desc">Barista and financial manager for the only student-run coffee shop on campus</div>
+          </div>
+          <div class="gig-item">
+            <div class="gig-title">Career Fellow &amp; Peer Advisor</div>
+            <div class="gig-org">Hale Center for Career Development</div>
+            <div class="gig-desc">Advised undergrads on résumés, networking, and career paths</div>
+          </div>
+          <div class="gig-item">
+            <div class="gig-title">Queer Peer Mentor</div>
+            <div class="gig-org">LGBTQIA+ Center</div>
+            <div class="gig-desc">Mentored peers, facilitated dialogues, and built stronger community</div>
+          </div>
+          <div class="gig-item">
+            <div class="gig-title">Language Fellow</div>
+            <div class="gig-org">Languages Department</div>
+            <div class="gig-desc">Supported events showcasing global cultures through music and film</div>
+          </div>
+          <div class="gig-item">
+            <div class="gig-title">Garden Volunteer</div>
+            <div class="gig-org">Sprout Garden</div>
+            <div class="gig-desc">Helped transform the school's urban agriculture initiative</div>
+          </div>
+          <div class="gig-item">
+            <div class="gig-title">Advisory Board Member</div>
+            <div class="gig-org">Economics and French Departments</div>
+            <div class="gig-desc">Engaged student input and helped tailor curriculums to meet student needs and interests</div>
+          </div>
+          <div class="gig-item">
+            <div class="gig-title">Research Assistant (first one)</div>
+            <div class="gig-org">Harvard Decision Science Lab, winter 2018/19</div>
+            <div class="gig-desc">Where it all started</div>
+          </div>
+        </div>
+        <div class="gig-era">
+          <div class="gig-era-label">High School &amp; Summers — Vermont (before 2016)</div>
+          <div class="gig-item">
+            <div class="gig-title">Varsity Snowboard Team</div>
+            <div class="gig-org">South Burlington High School</div>
+            <div class="gig-desc">Competed in boardercross, giant slalom, and freestyle events</div>
+          </div>
+          <div class="gig-item">
+            <div class="gig-title">Ski &amp; Snowboard Swap Sales</div>
+            <div class="gig-org">Vermont Ski and Sports</div>
+            <div class="gig-desc">Traveled throughout VT to support various local ski and snowboard swaps</div>
+          </div>
+          <div class="gig-item">
+            <div class="gig-title">Barn Worker</div>
+            <div class="gig-org">Various barns, from age 10 onwards</div>
+            <div class="gig-desc">Training working student for equestrian show jumping, seven days a week and full time during summers — even through college</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <p><strong>Looking to Get Involved?</strong></p>
-  <ul>
-    <li>
-      Cambridge Volunteers —
-      <a href="https://www.cambridgevolunteers.org/" target="_blank" rel="noopener">
-        cambridgevolunteers.org
-      </a>
-    </li>
-    <li>
-      Check Out Your Local Organizations
-    </li>
-  </ul>
-</section>
-
-
-  <footer>
-    <div class="container">© Piper Oren</div>
-  </footer>
-</body>
-</html>
+  </main>
+<footer class="footer">© Piper Oren · Built with Claude Sonnet 4.6</footer>
+</div>
+<script>
+  const tabs = document.querySelectorAll('.nav-btn');
+  const panels = document.querySelectorAll('.tab-panel');
+  tabs.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab;
+      tabs.forEach(b => b.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + target).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+</script>
+</body></html>
