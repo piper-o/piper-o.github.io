@@ -33,7 +33,6 @@
       grid-template-columns: 240px 1fr;
       min-height: 100vh;
     }
-    /* ── SIDEBAR ── */
     .sidebar {
       position: sticky;
       top: 0;
@@ -61,11 +60,7 @@
       margin-top: 0.35rem;
       font-style: normal;
     }
-    .sidebar-nav {
-      display: flex;
-      flex-direction: column;
-      gap: 0.15rem;
-    }
+    .sidebar-nav { display: flex; flex-direction: column; gap: 0.15rem; }
     .nav-btn {
       background: none;
       border: none;
@@ -106,7 +101,6 @@
       font-style: italic;
     }
     .sidebar-links a:hover { color: var(--accent); }
-    /* ── MAIN ── */
     main {
       padding: 3rem 3.5rem 4rem;
       max-width: 820px;
@@ -117,7 +111,6 @@
       from { opacity: 0; transform: translateY(7px); }
       to   { opacity: 1; transform: translateY(0); }
     }
-    /* ── SHARED ── */
     .section-eyebrow {
       font-size: 0.72rem;
       letter-spacing: 0.14em;
@@ -126,7 +119,6 @@
       margin-bottom: 1.4rem;
       font-style: normal;
     }
-    /* ── ABOUT ── */
     .about-lead {
       font-size: 1.42rem;
       font-weight: normal;
@@ -142,14 +134,6 @@
       margin-bottom: 1rem;
       max-width: 62ch;
     }
-    .email-link {
-      color: var(--accent);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.15s;
-    }
-    .email-link:hover { border-color: var(--accent); }
-    /* ── EXPERIENCE TIMELINE ── */
     .timeline { position: relative; padding-left: 1.6rem; }
     .timeline::before {
       content: '';
@@ -210,7 +194,6 @@
       border-bottom: 1px solid var(--border);
     }
     .tl-section-header:first-child { margin-top: 0; }
-    /* ── EARLY GIGS ── */
     .gigs-intro {
       font-size: 0.97rem;
       color: #3a3830;
@@ -256,7 +239,6 @@
     .gig-title { font-size: 0.93rem; color: var(--text); }
     .gig-org { font-size: 0.83rem; color: var(--accent); font-style: italic; margin-top: 0.05rem; }
     .gig-desc { font-size: 0.83rem; color: var(--muted); margin-top: 0.1rem; line-height: 1.5; }
-    /* ── PHOTOS TAB ── */
     .photos-intro {
       font-size: 0.97rem;
       color: #3a3830;
@@ -282,7 +264,7 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.3s ease, opacity 0.2s ease;
+      transition: transform 0.3s ease;
     }
     .photo-item:hover img { transform: scale(1.04); }
     .photo-caption {
@@ -297,7 +279,6 @@
       transition: opacity 0.2s ease;
     }
     .photo-item:hover .photo-caption { opacity: 1; }
-    /* ── LIGHTBOX ── */
     .lightbox {
       display: none;
       position: fixed;
@@ -331,8 +312,7 @@
     }
     .lightbox-close {
       position: absolute;
-      top: -2.2rem;
-      right: 0;
+      top: -2.2rem; right: 0;
       background: none;
       border: none;
       color: #c8c4bc;
@@ -359,7 +339,6 @@
     .lightbox-nav:hover { color: white; }
     .lightbox-prev { left: -3rem; }
     .lightbox-next { right: -3rem; }
-    /* ── FOOTER ── */
     .footer {
       font-size: 0.78rem;
       color: var(--muted);
@@ -369,7 +348,6 @@
     }
     .footer a { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--border); transition: color 0.15s, border-color 0.15s; }
     .footer a:hover { color: var(--accent); border-color: var(--accent); }
-    /* ── RESPONSIVE ── */
     @media (max-width: 720px) {
       .page { grid-template-columns: 1fr; }
       .sidebar {
@@ -395,7 +373,6 @@
 <a href="#main-content" style="position:absolute;left:-9999px;top:0;">Skip to content</a>
 <div class="page">
 
-  <!-- SIDEBAR -->
   <aside class="sidebar">
     <div>
       <div class="sidebar-name">Piper Oren</div>
@@ -404,8 +381,8 @@
     <nav class="sidebar-nav" aria-label="Page sections">
       <button class="nav-btn active" data-tab="about">About</button>
       <button class="nav-btn" data-tab="experience">Experience</button>
-      <button class="nav-btn" data-tab="photos">Photos</button>
       <button class="nav-btn" data-tab="earlygigs">Not on My Resume</button>
+      <button class="nav-btn" data-tab="photos">Photos</button>
     </nav>
     <div class="sidebar-links">
       <a href="https://www.linkedin.com/in/piper-oren/" target="_blank" rel="noopener">LinkedIn ↗</a>
@@ -413,7 +390,6 @@
     </div>
   </aside>
 
-  <!-- MAIN -->
   <main id="main-content">
 
     <!-- ══ ABOUT ══ -->
@@ -433,7 +409,6 @@
     <div class="tab-panel" id="tab-experience">
       <p class="section-eyebrow">Experience</p>
 
-      <!-- EDUCATION -->
       <div class="tl-section-header">Education</div>
       <div class="timeline">
         <div class="tl-year-group">
@@ -460,7 +435,6 @@
         </div>
       </div>
 
-      <!-- TRAINING -->
       <div class="tl-section-header">Training</div>
       <div class="timeline">
         <div class="tl-year-group">
@@ -498,7 +472,6 @@
         </div>
       </div>
 
-      <!-- PROFESSIONAL EXPERIENCE -->
       <div class="tl-section-header">Professional Experience</div>
       <div class="timeline">
         <div class="tl-year-group">
@@ -579,7 +552,6 @@
         </div>
       </div>
 
-      <!-- PUBLIC SERVICE -->
       <div class="tl-section-header">Public Service</div>
       <div class="timeline">
         <div class="tl-year-group">
@@ -614,7 +586,7 @@
           <div class="tl-item">
             <div class="tl-item-header">
               <span class="tl-role">Volunteer &amp; Strategy Committee Member</span>
-              <span class="tl-date">Jun. 2025</span>
+              <span class="tl-date">Jun. 2025 – Present</span>
             </div>
             <div class="tl-org">Somerville Community Growing Center</div>
             <div class="tl-link"><a href="https://www.thegrowingcenter.org/" target="_blank" rel="noopener">thegrowingcenter.org ↗</a></div>
@@ -641,28 +613,6 @@
             <div class="tl-org">Sprout Garden, Connecticut College</div>
             <div class="tl-link"><a href="https://conncollsprout.wordpress.com/" target="_blank" rel="noopener">conncollsprout.wordpress.com ↗</a></div>
           </div>
-        </div>
-      </div>
-
-      <!-- ACADEMIC SERVICE -->
-      <div class="tl-section-header">Academic Service</div>
-      <div class="timeline">
-        <div class="tl-year-group">
-          <div class="tl-year">2019 – 2020</div>
-          <div class="tl-item">
-            <div class="tl-item-header">
-              <span class="tl-role">Language Fellow</span>
-              <span class="tl-date">2019 – 2020</span>
-            </div>
-            <div class="tl-org">World Languages Department, Connecticut College</div>
-          </div>
-          <div class="tl-item">
-            <div class="tl-item-header">
-              <span class="tl-role">Advisory Board Member</span>
-              <span class="tl-date">2018 – 2020</span>
-            </div>
-            <div class="tl-org">Economics and French Departments, Connecticut College</div>
-          </div>
           <div class="tl-item">
             <div class="tl-item-header">
               <span class="tl-role">Career Fellow &amp; Peer Advisor</span>
@@ -680,6 +630,10 @@
             <div class="tl-link"><a href="https://www.conncoll.edu/gsp/lgbtqia-center/" target="_blank" rel="noopener">conncoll.edu/lgbtqia-center ↗</a></div>
           </div>
         </div>
+      </div>
+
+      <div class="tl-section-header">Academic Service</div>
+      <div class="timeline">
         <div class="tl-year-group">
           <div class="tl-year">2024</div>
           <div class="tl-item">
@@ -713,49 +667,22 @@
             <div class="tl-link"><a href="https://www.behaviourworksaustralia.org/major-projects/covid-19-scrub-study" target="_blank" rel="noopener">SCRUB Study ↗</a></div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- ══ PHOTOS ══ -->
-    <div class="tab-panel" id="tab-photos">
-      <p class="section-eyebrow">Photos</p>
-      <p class="photos-intro">A few snapshots.</p>
-      <div class="photo-grid" id="photoGrid">
-        <div class="photo-item" data-index="0">
-          <img src="1.jpg" alt="" loading="lazy" />
-          <div class="photo-caption"></div>
-        </div>
-        <div class="photo-item" data-index="1">
-          <img src="2.jpg" alt="" loading="lazy" />
-          <div class="photo-caption"></div>
-        </div>
-        <div class="photo-item" data-index="2">
-          <img src="3.jpg" alt="" loading="lazy" />
-          <div class="photo-caption"></div>
-        </div>
-        <div class="photo-item" data-index="3">
-          <img src="4.jpg" alt="" loading="lazy" />
-          <div class="photo-caption"></div>
-        </div>
-        <div class="photo-item" data-index="4">
-          <img src="5.jpg" alt="" loading="lazy" />
-          <div class="photo-caption"></div>
-        </div>
-        <div class="photo-item" data-index="5">
-          <img src="6.jpg" alt="" loading="lazy" />
-          <div class="photo-caption"></div>
-        </div>
-        <div class="photo-item" data-index="6">
-          <img src="8.jpg" alt="" loading="lazy" />
-          <div class="photo-caption"></div>
-        </div>
-        <div class="photo-item" data-index="7">
-          <img src="9.jpg" alt="" loading="lazy" />
-          <div class="photo-caption"></div>
-        </div>
-        <div class="photo-item" data-index="8">
-          <img src="10.jpg" alt="" loading="lazy" />
-          <div class="photo-caption"></div>
+        <div class="tl-year-group">
+          <div class="tl-year">2019 – 2020</div>
+          <div class="tl-item">
+            <div class="tl-item-header">
+              <span class="tl-role">Language Fellow</span>
+              <span class="tl-date">2019 – 2020</span>
+            </div>
+            <div class="tl-org">World Languages Department, Connecticut College</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-item-header">
+              <span class="tl-role">Advisory Board Member</span>
+              <span class="tl-date">2018 – 2020</span>
+            </div>
+            <div class="tl-org">Economics and French Departments, Connecticut College</div>
+          </div>
         </div>
       </div>
     </div>
@@ -766,31 +693,71 @@
       <p class="gigs-intro">The experiences that don't make it to my final resume or CV, but that I want to share.</p>
       <div class="gigs-timeline">
         <div class="gig-era">
-          <div class="gig-era-label">2016–2020</div>
+          <div class="gig-era-label">Ongoing</div>
+          <div class="gig-item">
+            <div class="gig-title">Sporadic Photographer</div>
+            <div class="gig-org">Analog and Digital</div>
+            <div class="gig-desc">Portraits, urban decay and natural reclaim, candid street shots. ISO: darkroom to develop prints</div>
+          </div>
+          <div class="gig-item">
+            <div class="gig-title">Experimental Chef</div>
+            <div class="gig-org">International Cuisines</div>
+            <div class="gig-desc">Building up my recipe book — feel free to suggest new dishes!</div>
+          </div>
+          <div class="gig-item">
+            <div class="gig-title">Avid Thrifter</div>
+            <div class="gig-org">Nth Hand</div>
+            <div class="gig-desc">Living off of what already exists</div>
+          </div>
+          <div class="gig-item">
+            <div class="gig-title">Restorer</div>
+            <div class="gig-org">Wood, metals, stone, clay</div>
+            <div class="gig-desc">Fix, repurpose, and rework found items into new tools and objects</div>
+          </div>
+        </div>
+        <div class="gig-era">
+          <div class="gig-era-label">2016 – 2020</div>
           <div class="gig-item">
             <div class="gig-title">Barista</div>
-            <div class="gig-org">Coffee Grounds</div>
-            <div class="gig-desc">Barista and financial manager for the only fully student-run coffee shop on campus</div>
+            <div class="gig-org">Coffee Grounds, Connecticut College</div>
+            <div class="gig-desc">Barista and financial manager for the only fully student-run coffee shop on campus. Recommendation: New London Fog</div>
           </div>
         </div>
         <div class="gig-era">
           <div class="gig-era-label">Before 2016</div>
           <div class="gig-item">
-            <div class="gig-title">Varsity Snowboard Team</div>
+            <div class="gig-title">Varsity Snowboard Team Member</div>
             <div class="gig-org">South Burlington High School</div>
             <div class="gig-desc">Competed in boardercross, giant slalom, and freestyle events</div>
           </div>
           <div class="gig-item">
-            <div class="gig-title">Ski &amp; Snowboard Swap Sales</div>
+            <div class="gig-title">Ski &amp; Snowboard Swap Salesperson</div>
             <div class="gig-org">Vermont Ski and Sports</div>
             <div class="gig-desc">Traveled throughout VT to support various local ski and snowboard swaps</div>
           </div>
           <div class="gig-item">
-            <div class="gig-title">Barn Worker</div>
-            <div class="gig-org">Various barns, from age 10 onwards</div>
-            <div class="gig-desc">Training working student for equestrian show jumping, seven days a week and full time during summers — even through college</div>
+            <div class="gig-title">Working Student</div>
+            <div class="gig-org">Attiva Farm and others, from age 10 onwards</div>
+            <div class="gig-desc">Trained as a working student for equestrian show jumping, seven days a week and full time through high school — I even finished early to pursue it, and continued partially through college before deciding I wanted to do more for society</div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- ══ PHOTOS ══ -->
+    <div class="tab-panel" id="tab-photos">
+      <p class="section-eyebrow">Photos</p>
+      <p class="photos-intro">A few snapshots from a previous life. Featured are my dog Bambi, horse Abba (Absolute Gold), and trainer Holly Mitten.</p>
+      <div class="photo-grid" id="photoGrid">
+        <div class="photo-item" data-index="0"><img src="1.jpg" alt="" loading="lazy" /><div class="photo-caption"></div></div>
+        <div class="photo-item" data-index="1"><img src="2.jpg" alt="" loading="lazy" /><div class="photo-caption"></div></div>
+        <div class="photo-item" data-index="2"><img src="3.jpg" alt="" loading="lazy" /><div class="photo-caption"></div></div>
+        <div class="photo-item" data-index="3"><img src="4.jpg" alt="" loading="lazy" /><div class="photo-caption"></div></div>
+        <div class="photo-item" data-index="4"><img src="5.jpg" alt="" loading="lazy" /><div class="photo-caption"></div></div>
+        <div class="photo-item" data-index="5"><img src="6.jpg" alt="" loading="lazy" /><div class="photo-caption"></div></div>
+        <div class="photo-item" data-index="6"><img src="8.jpg" alt="" loading="lazy" /><div class="photo-caption"></div></div>
+        <div class="photo-item" data-index="7"><img src="9.jpg" alt="" loading="lazy" /><div class="photo-caption"></div></div>
+        <div class="photo-item" data-index="8"><img src="10.jpg" alt="" loading="lazy" /><div class="photo-caption"></div></div>
       </div>
     </div>
 
@@ -810,7 +777,6 @@
 </div>
 
 <script>
-  // ── TAB NAVIGATION ──
   const tabs = document.querySelectorAll('.nav-btn');
   const panels = document.querySelectorAll('.tab-panel');
   tabs.forEach(btn => {
@@ -824,7 +790,6 @@
     });
   });
 
-  // ── LIGHTBOX ──
   const photos = [
     { src: '1.jpg',  caption: '' },
     { src: '2.jpg',  caption: '' },
@@ -837,8 +802,8 @@
     { src: '10.jpg', caption: '' },
   ];
 
-  const lightbox = document.getElementById('lightbox');
-  const lbImg    = document.getElementById('lbImg');
+  const lightbox  = document.getElementById('lightbox');
+  const lbImg     = document.getElementById('lbImg');
   const lbCaption = document.getElementById('lbCaption');
   let current = 0;
 
@@ -849,12 +814,10 @@
     lightbox.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
-
   function closeLightbox() {
     lightbox.classList.remove('open');
     document.body.style.overflow = '';
   }
-
   function showPhoto(index) {
     current = (index + photos.length) % photos.length;
     lbImg.src = photos[current].src;
@@ -864,15 +827,10 @@
   document.querySelectorAll('.photo-item').forEach(item => {
     item.addEventListener('click', () => openLightbox(+item.dataset.index));
   });
-
   document.getElementById('lbClose').addEventListener('click', closeLightbox);
   document.getElementById('lbPrev').addEventListener('click', () => showPhoto(current - 1));
   document.getElementById('lbNext').addEventListener('click', () => showPhoto(current + 1));
-
-  lightbox.addEventListener('click', e => {
-    if (e.target === lightbox) closeLightbox();
-  });
-
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
   document.addEventListener('keydown', e => {
     if (!lightbox.classList.contains('open')) return;
     if (e.key === 'Escape') closeLightbox();
