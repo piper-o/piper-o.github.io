@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piper Oren</title>
+  <style>
+    :root {
+      --cream: #faf6ef;
+      --ink: #2b2620;
+      --muted: #7a7266;
+      --rule: #d9d2c4;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Georgia, 'Times New Roman', serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    main {
+      max-width: 34rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 2.75rem);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      margin-bottom: 1.25rem;
+    }
+
+    .rule {
+      width: 3rem;
+      height: 1px;
+      background: var(--rule);
+      margin: 0 auto 1.25rem;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .contact {
+      margin-top: 2.5rem;
+      font-style: normal;
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--rule);
+      transition: text-decoration-color 0.2s ease;
+    }
+
+    a:hover,
+    a:focus-visible {
+      text-decoration-color: var(--ink);
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Piper Oren</h1>
+    <div class="rule"></div>
+    <p>This site is being revised.<br>A new version is on its way.</p>
+    <p class="contact">In the meantime: <a href="mailto:you@example.com">you@example.com</a></p>
+  </main>
+</body>
+</html>

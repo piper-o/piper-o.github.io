@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Piper Oren</title>
+  <meta name="description" content="Public Sector Capacity Building and Evaluation. Incoming MSPPM, Carnegie Mellon University, Heinz College.">
+  <style>
+    :root {
+      --bg: #faf9f6;
+      --text: #1a1916;
+      --muted: #7a7568;
+      --accent: #3a2d5e;
+      --border: #e2dfd6;
+      --font: "Times New Roman", Times, serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* TOP NAV */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 0.75rem 4rem;
+      gap: 1rem;
+    }
+    .topnav-name {
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .topnav-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .topnav-links a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .topnav-links a:hover,
+    .topnav-links a.active { color: var(--accent); }
+
+    /* PAGE */
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3.5rem 4rem 5rem;
+    }
+
+    /* HEADER */
+    .site-header { margin-bottom: 2.75rem; }
+    .site-name {
+      font-size: 1.75rem;
+      font-weight: normal;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+    }
+    .site-tagline {
+      font-size: 0.85rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      margin-bottom: 1rem;
+    }
+    .site-bio {
+      font-size: 0.97rem;
+      color: #3a3830;
+      line-height: 1.75;
+      max-width: 64ch;
+      margin-bottom: 1rem;
+    }
+    .site-links {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .site-links a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-style: italic;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .site-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* SECTIONS */
+    .section {
+      margin-bottom: 2.75rem;
+      scroll-margin-top: 4rem;
+    }
+    .section-head {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ENTRIES */
+    .entry { margin-bottom: 1.4rem; }
+    .entry:last-child { margin-bottom: 0; }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.1rem;
+    }
+    .entry-role {
+      font-size: 0.96rem;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .entry-year {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-style: italic;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .entry-org {
+      font-size: 0.84rem;
+      color: var(--accent);
+      font-style: italic;
+      margin-bottom: 0.3rem;
+    }
+    .entry-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .entry-bullets li {
+      font-size: 0.86rem;
+      color: #4a4840;
+      line-height: 1.65;
+      padding-left: 1em;
+      position: relative;
+      margin-bottom: 0.15rem;
+    }
+    .entry-bullets li:last-child { margin-bottom: 0; }
+    .entry-bullets li::before {
+      content: '\2013';
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+    }
+    .entry-detail {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+      font-style: italic;
+    }
+    .entry-link {
+      font-size: 0.78rem;
+      margin-top: 0.3rem;
+    }
+    .entry-link a {
+      color: var(--muted);
+      text-decoration: none;
+      font-style: italic;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .entry-link a:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* SERVICE ROWS */
+    .service-group { margin-bottom: 1.25rem; }
+    .service-group:last-child { margin-bottom: 0; }
+    .service-group-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .service-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 0.25rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .service-row:last-child { border-bottom: none; }
+    .service-left { flex: 1; min-width: 0; }
+    .service-main { font-size: 0.86rem; color: var(--text); }
+    .service-org { font-size: 0.82rem; color: var(--accent); font-style: italic; }
+    .service-yr { font-size: 0.78rem; color: var(--muted); font-style: italic; white-space: nowrap; }
+
+    /* BACKGROUND */
+    .bg-prose {
+      font-size: 0.91rem;
+      color: #4a4840;
+      line-height: 1.85;
+    }
+    .bg-prose p { margin-bottom: 1rem; }
+    .bg-prose p:last-child { margin-bottom: 0; }
+
+    /* FOOTER */
+    .site-footer {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-style: italic;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      margin-top: 1rem;
+    }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+      .topnav { padding: 0.65rem 1.25rem; }
+      .topnav-links { gap: 0.85rem; }
+      .page { padding: 2rem 1.25rem 4rem; }
+      .entry-header { flex-direction: column; gap: 0.1rem; }
+      .service-row { flex-wrap: wrap; }
+      .service-yr { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="topnav" aria-label="Page sections">
+  <span class="topnav-name">Piper Oren</span>
+  <div class="topnav-links">
+    <a href="#education">Education</a>
+    <a href="#policy">Policy Work</a>
+    <a href="#research">Research</a>
+    <a href="#training">Training</a>
+    <a href="#service">Service</a>
+    <a href="#background">Background</a>
+  </div>
+</nav>
+
+<main class="page">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <h1 class="site-name">Piper Oren</h1>
+    <p class="site-tagline">Public Sector Capacity Building and Evaluation &middot; Cambridge, MA</p>
+    <p class="site-bio">Six years building research and evaluation infrastructure across public institutions, moving toward work at the intersection of government capacity, evidence use, and policy design. Incoming MSPPM, Carnegie Mellon University, Heinz College, fall 2026.</p>
+    <div class="site-links">
+      <a href="https://www.linkedin.com/in/piper-oren/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.juliaminson.com/lab" target="_blank" rel="noopener">Constructive Disagreement Lab</a>
+      <a href="mailto:piper.oren@gmail.com">piper.oren@gmail.com</a>
+    </div>
+  </header>
+
+  <!-- EDUCATION -->
+  <section class="section" id="education">
+    <h2 class="section-head">Education</h2>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-role">Master of Science in Public Policy and Management</div>
+        <div class="entry-year">Incoming fall 2026</div>
+      </div>
+      <div class="entry-org">Carnegie Mellon University, Heinz College &ndash; Pittsburgh, PA</div>
+      <ul class="entry-bullets">
+        <li>75% merit scholarship</li>
+        <li>Research assistant with Manuela Collis starting August 2026</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-role">BA, Economics and International Relations</div>
+        <div class="entry-year">May 2020</div>
+      </div>
+      <div class="entry-org">Connecticut College &ndash; New London, CT</div>
+      <div class="entry-detail">Chair's Prize in Economics &middot; Honors thesis in behavioral economics &middot; GPA 3.59</div>
+    </div>
+  </section>
+
+  <!-- POLICY WORK -->
+  <section class="section" id="policy">
+    <h2 class="section-head">Policy Work</h2>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-role">Consultant</div>
+        <div class="entry-year">May 2026 &ndash; present</div>
+      </div>
+      <div class="entry-org">City of Boston, Office of the Parking Clerk</div>
+      <ul class="entry-bullets">
+        <li>Leading a program evaluation of the Home Healthcare Placard program, including stakeholder mapping across the Disabilities Commission, Age Strong Commission, and home healthcare providers, and national benchmarking to inform curb access policy redesign</li>
+        <li>Supporting development of a block-level curb management analytics tool integrating permit, vehicle ownership, and demographic data for equity-informed planning</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-role">Consultant</div>
+        <div class="entry-year">May 2026 &ndash; present</div>
+      </div>
+      <div class="entry-org">Boston Public Library</div>
+      <ul class="entry-bullets">
+        <li>Designing a phased evaluation capacity strategy for a multi-year patron research initiative, from current-state diagnosis through pilot design</li>
+        <li>Conducting mixed-methods research on how patrons discover and access services, translating findings into website and service improvement priorities</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-role">Evaluation Capacity Case Challenge &ndash; First Place</div>
+        <div class="entry-year">Jan &ndash; May 2026</div>
+      </div>
+      <div class="entry-org">Max Bell School of Public Policy, McGill University</div>
+      <ul class="entry-bullets">
+        <li>Selected as one of 20 participants; led team Alpine Insights to first place with an equity-centered evaluation capacity plan for Medecins du Monde Canada, including theory of change, phased governance structure, and adaptive M&amp;E framework</li>
+      </ul>
+      <div class="entry-link"><a href="https://www.mcgill.ca/maxbellschool/initiatives/ec3" target="_blank" rel="noopener">Max Bell EC3 Case Challenge</a></div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-role">Data and Policy Summer Scholar</div>
+        <div class="entry-year">Jun &ndash; Aug 2023</div>
+      </div>
+      <div class="entry-org">Harris School of Public Policy, University of Chicago</div>
+      <ul class="entry-bullets">
+        <li>Synthesized geospatial mobility, cellphone, and UNHCR household survey data to generate district-level aid targeting recommendations for post-2021 displacement in Afghanistan; recipient of the Community Engagement Award</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- RESEARCH EXPERIENCE -->
+  <section class="section" id="research">
+    <h2 class="section-head">Research Experience</h2>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-role">Behavioral Research Coordinator</div>
+        <div class="entry-year">Aug 2022 &ndash; present</div>
+      </div>
+      <div class="entry-org">Harvard Business School, Division of Research and Faculty Development</div>
+      <ul class="entry-bullets">
+        <li>Built the research operations infrastructure supporting 40+ behavioral projects annually, overseeing study design, IRB compliance, vendor contracts, and a staff of 15+ across lab, online, and field modalities</li>
+        <li>Redesigned billing workflows and vendor processes, recovering $41K in additional lab revenue across FY23 to FY25</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-role">Lab Coordinator</div>
+        <div class="entry-year">Jul 2021 &ndash; Jul 2022</div>
+      </div>
+      <div class="entry-org">MIT Sloan School of Management, Behavioral and Policy Sciences</div>
+      <ul class="entry-bullets">
+        <li>Built shared systems from scratch to support 27 concurrent faculty projects spanning autonomous vehicle policy, gendered impacts of AI, and identity research</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-role">Research Assistant</div>
+        <div class="entry-year">Aug 2020 &ndash; Jul 2021</div>
+      </div>
+      <div class="entry-org">Harvard Kennedy School, Constructive Disagreement Lab &ndash; Dr. Julia Minson</div>
+      <ul class="entry-bullets">
+        <li>Co-designed and deployed 19 experiments on conversational receptiveness, information-seeking, and advice-taking across opposing views</li>
+      </ul>
+      <div class="entry-link"><a href="https://www.juliaminson.com/lab" target="_blank" rel="noopener">Constructive Disagreement Lab</a></div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-role">Research Intern</div>
+        <div class="entry-year">Jun &ndash; Aug 2019</div>
+      </div>
+      <div class="entry-org">Duke University, Center for Advanced Hindsight</div>
+      <ul class="entry-bullets">
+        <li>Selected for the World Team; supported design of a women's health savings initiative in Kenya and sedentary behavior interventions across the US and Netherlands</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-role">Research Assistant</div>
+        <div class="entry-year">Dec 2018 &ndash; Feb 2019</div>
+      </div>
+      <div class="entry-org">Harvard Kennedy School, Harvard Decision Science Laboratory</div>
+      <ul class="entry-bullets">
+        <li>Supported experimental study design and developed internal processes to address onboarding gaps and preserve institutional knowledge</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TRAINING -->
+  <section class="section" id="training">
+    <h2 class="section-head">Training</h2>
+
+    <div class="entry">
+      <div class="entry-header">
+        <div class="entry-role">Research Staff Training for Randomized Evaluations</div>
+        <div class="entry-year">Aug 2025</div>
+      </div>
+      <div class="entry-org">J-PAL North America, Cambridge, MA</div>
+      <ul class="entry-bullets">
+        <li>Selected participant; methods training in RCT design, power calculations, implementation monitoring, and translating findings into program decisions</li>
+      </ul>
+      <div class="entry-link"><a href="https://www.povertyactionlab.org/blog/11-14-25/supporting-early-career-research-staff-through-north-americas-research-staff-training" target="_blank" rel="noopener">J-PAL Research Staff Training 2025</a></div>
+    </div>
+  </section>
+
+  <!-- SERVICE -->
+  <section class="section" id="service">
+    <h2 class="section-head">Service</h2>
+
+    <div class="service-group">
+      <div class="service-group-label">Academic</div>
+      <div class="service-row">
+        <div class="service-left">
+          <div class="service-main">Peer Reviewer</div>
+          <div class="service-org">Behavioral Economics Guide</div>
+        </div>
+        <div class="service-yr">2022 &ndash; 2024</div>
+      </div>
+      <div class="service-row">
+        <div class="service-left">
+          <div class="service-main">Editor</div>
+          <div class="service-org">Practical Human Experiments: The Guide to Science with People without Going Mad</div>
+        </div>
+        <div class="service-yr">Dec 2024</div>
+      </div>
+      <div class="service-row">
+        <div class="service-left">
+          <div class="service-main">Project Contributor</div>
+          <div class="service-org">Survey of COVID-19 Responses to Understand Behaviour (SCRUB)</div>
+        </div>
+        <div class="service-yr">May &ndash; Sep 2020</div>
+      </div>
+      <div class="service-row">
+        <div class="service-left">
+          <div class="service-main">Advisory Board Member</div>
+          <div class="service-org">Economics and French Departments, Connecticut College</div>
+        </div>
+        <div class="service-yr">Sep 2019 &ndash; May 2020</div>
+      </div>
+      <div class="service-row">
+        <div class="service-left">
+          <div class="service-main">Language Fellow</div>
+          <div class="service-org">World Languages Department, Connecticut College</div>
+        </div>
+        <div class="service-yr">Sep 2018 &ndash; May 2019</div>
+      </div>
+    </div>
+
+    <div class="service-group">
+      <div class="service-group-label">Public</div>
+      <div class="service-row">
+        <div class="service-left">
+          <div class="service-main">Sustainability Committee Member and Volunteer</div>
+          <div class="service-org">Somerville Community Growing Center</div>
+        </div>
+        <div class="service-yr">Sep 2025 &ndash; Jul 2026</div>
+      </div>
+      <div class="service-row">
+        <div class="service-left">
+          <div class="service-main">Co-facilitator, MPA/MPP application workshops</div>
+          <div class="service-org">Future Female Leaders Bootcamp</div>
+        </div>
+        <div class="service-yr">Sep &ndash; Dec 2025</div>
+      </div>
+      <div class="service-row">
+        <div class="service-left">
+          <div class="service-main">Grant Reviewer</div>
+          <div class="service-org">Giving Joy, Micro Grants for Women Entrepreneurs</div>
+        </div>
+        <div class="service-yr">Aug &ndash; Dec 2025</div>
+      </div>
+      <div class="service-row">
+        <div class="service-left">
+          <div class="service-main">Volunteer</div>
+          <div class="service-org">Many Helping Hands 365</div>
+        </div>
+        <div class="service-yr">Jan 2022 &ndash; Jul 2026</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BACKGROUND -->
+  <section class="section" id="background">
+    <h2 class="section-head">Background</h2>
+    <div class="bg-prose">
+      <p>Grew up in Vermont, where I trained as a working student in competitive show jumping from age ten. I finished high school early to pursue it full time, kept at it through parts of college, and eventually chose to redirect that same level of commitment toward work with broader reach. Along the way: making sandwiches and homemade bread at the Red Onion Cafe, selling skis at swaps across the state, managing the finances of the only fully student-run coffee shop at Connecticut College.</p>
+      <p>These days I shoot film and digital photography, mostly portraits, street scenes, and urban decay. I restore found wood, metal, and stone objects. I cook my way through whatever recipes friends and family are willing to share. Suggestions strongly encouraged.</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    &copy; Piper Oren
+  </footer>
+
+</main>
+
+<script>
+  const sections = document.querySelectorAll('.section');
+  const navLinks = document.querySelectorAll('.topnav-links a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        const active = document.querySelector(`.topnav-links a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
