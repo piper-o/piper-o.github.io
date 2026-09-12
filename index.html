@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Piper Oren</title>
-  <meta name="description" content="Public Sector Capacity Building and Evaluation. Incoming MSPPM, Carnegie Mellon University, Heinz College.">
+  <meta name="description" content="Evaluation and evidence capacity for the public sector. Master of Science in Public Policy and Management, Carnegie Mellon University, Heinz College.">
   <style>
     :root {
       --bg: #faf9f6;
@@ -14,63 +14,72 @@
       --border: #e2dfd6;
       --font: "Times New Roman", Times, serif;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+    html { scroll-behavior: smooth; }
     body {
       font-family: var(--font);
       background: var(--bg);
       color: var(--text);
       font-size: 16px;
       line-height: 1.7;
-      min-height: 100vh;
+    }
+    /* TOP NAV */
+    .topnav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
       display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 0.75rem 4rem;
+      gap: 1rem;
     }
-
-    main {
-      max-width: 34rem;
-      text-align: center;
+    .topnav-name {
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--accent);
+      white-space: nowrap;
     }
-
+    .topnav-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .topnav-links a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .topnav-links a:hover,
+    .topnav-links a.active { color: var(--accent); }
+    /* PAGE */
+    .page {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 3.5rem 4rem 5rem;
+    }
+    /* HEADER */
+    .site-header { margin-bottom: 3.5rem; }
     .site-name {
       font-size: 1.75rem;
       font-weight: normal;
       color: var(--text);
       margin-bottom: 0.2rem;
     }
-
     .site-tagline {
       font-size: 0.85rem;
       color: var(--muted);
       letter-spacing: 0.04em;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
-
-    .rule {
-      width: 3rem;
-      height: 1px;
-      background: var(--border);
-      margin: 0 auto 2rem;
-    }
-
-    .status {
-      font-size: 0.97rem;
-      color: #3a3830;
-      font-style: italic;
-      line-height: 1.75;
-      margin-bottom: 2rem;
-    }
-
     .site-links {
       display: flex;
       gap: 1.25rem;
-      justify-content: center;
       flex-wrap: wrap;
     }
-
     .site-links a {
       font-size: 0.82rem;
       color: var(--muted);
@@ -80,30 +89,346 @@
       padding-bottom: 1px;
       transition: color 0.15s, border-color 0.15s;
     }
-
-    .site-links a:hover,
-    .site-links a:focus-visible { color: var(--accent); border-color: var(--accent); }
-
-    a:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 3px;
+    .site-links a:hover { color: var(--accent); border-color: var(--accent); }
+    /* SECTIONS */
+    .section {
+      margin-bottom: 3.25rem;
+      scroll-margin-top: 4rem;
     }
-
+    .section-head {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    /* PROJECT CARDS */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.1rem;
+      align-items: start;
+    }
+    .project-card {
+      border: 1px solid var(--border);
+      padding: 1.35rem 1.5rem;
+    }
+    .project-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.75rem;
+    }
+    .project-title {
+      font-size: 1.02rem;
+      color: var(--text);
+    }
+    .project-date {
+      font-size: 0.86rem;
+      color: var(--text);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .project-org {
+      font-size: 0.82rem;
+      color: var(--accent);
+      font-style: italic;
+      margin-top: 0.2rem;
+    }
+    .project-role {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.1rem;
+      margin-bottom: 0.75rem;
+    }
+    .project-teaser {
+      font-size: 0.88rem;
+      color: #4a4840;
+      line-height: 1.6;
+      margin-bottom: 0.6rem;
+    }
+    .detail-toggle summary {
+      list-style: none;
+      cursor: pointer;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-style: italic;
+      width: fit-content;
+    }
+    .detail-toggle summary::-webkit-details-marker { display: none; }
+    .detail-toggle summary::after {
+      content: "Read more";
+      border-bottom: 1px solid var(--border);
+    }
+    .detail-toggle[open] summary::after {
+      content: "Show less";
+    }
+    .detail-toggle summary:hover::after {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+    .detail-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 0.85rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border);
+      margin-bottom: 0.6rem;
+    }
+    .detail-text {
+      font-size: 0.88rem;
+      color: #4a4840;
+      line-height: 1.75;
+      max-width: 68ch;
+    }
+    .project-card .detail-text {
+      margin-top: 0.85rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+    .bg-prose .detail-text { max-width: 960px; }
+    /* EXPERIENCE STRIP */
+    .exp-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .exp-row:last-of-type { border-bottom: none; }
+    .exp-left { flex: 1; min-width: 0; }
+    .exp-role { font-size: 0.88rem; color: var(--text); }
+    .exp-org { font-size: 0.82rem; color: var(--accent); font-style: italic; }
+    .exp-yr { font-size: 0.78rem; color: var(--muted); font-style: italic; white-space: nowrap; }
+    /* BACKGROUND / PROSE */
+    .bg-prose {
+      font-size: 0.95rem;
+      color: #4a4840;
+      line-height: 1.85;
+      max-width: 960px;
+    }
+    .bg-prose p { margin-bottom: 1rem; }
+    .bg-prose p:last-child { margin-bottom: 0; }
+    /* FOOTER */
+    .site-footer {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-style: italic;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      margin-top: 1rem;
+    }
+    /* MOBILE */
     @media (max-width: 700px) {
-      body { padding: 1.25rem; }
+      .topnav { padding: 0.65rem 1.25rem; }
+      .topnav-links { gap: 0.85rem; }
+      .page { padding: 2rem 1.25rem 4rem; }
+      .project-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <main>
+<nav class="topnav" aria-label="Page sections">
+  <span class="topnav-name">Piper Oren</span>
+  <div class="topnav-links">
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#background">Background</a>
+  </div>
+</nav>
+
+<main class="page">
+
+  <!-- HEADER -->
+  <header class="site-header">
     <h1 class="site-name">Piper Oren</h1>
-    <p class="site-tagline">Public Sector Capacity Building and Evaluation</p>
-    <div class="rule"></div>
-    <p class="status">This site is being revised.<br>A new version is on its way.</p>
+    <p class="site-tagline">Building Governance Capacity for the Public Sector &middot; Pittsburgh, PA</p>
     <div class="site-links">
       <a href="https://www.linkedin.com/in/piper-oren/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="mailto:piper.oren@gmail.com">piper.oren@gmail.com</a>
     </div>
-  </main>
+  </header>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <h2 class="section-head">Projects</h2>
+
+    <div class="project-grid">
+    <div class="project-card">
+      <div class="project-title-row">
+        <div class="project-title">Science Angels RCT</div>
+        <div class="project-date">2026&ndash;Present</div>
+      </div>
+      <div class="project-org">Carnegie Mellon University, Heinz College</div>
+      <div class="project-role">Research Assistant to Dr. Manuela Collis</div>
+      <p class="project-teaser">Building the infrastructure for a field experiment on how scientists get funded.</p>
+      <details class="detail-toggle">
+        <summary aria-label="Toggle project detail"></summary>
+        <p class="detail-text">I'm helping build the evaluation framework and field infrastructure for a large-scale randomized controlled trial studying science funding, including a theory of change workbook and the Python scripts for the data collection infrastructure, for the pilot this fall and full launch in spring 2027.</p>
+      </details>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title-row">
+        <div class="project-title">Home Healthcare Placard Program</div>
+        <div class="project-date">2026</div>
+      </div>
+      <div class="project-org">City of Boston, Office of the Parking Clerk</div>
+      <div class="project-role">Summer Fellow</div>
+      <p class="project-teaser">Evaluating how parking access shapes the experience of giving and receiving home health care.</p>
+      <details class="detail-toggle">
+        <summary aria-label="Toggle project detail"></summary>
+        <p class="detail-text">I supported the digitization of this program and built the persona discovery, data collection, and analysis infrastructure for interviews across home health aides, family caregivers, residents, and the connectors working between them. The current-state report and interview data are now informing the next round of curb access policy.</p>
+      </details>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title-row">
+        <div class="project-title">Patron Research &amp; Evaluation Capacity Building Strategy</div>
+        <div class="project-date">2026&ndash;Present</div>
+      </div>
+      <div class="project-org">Boston Public Library</div>
+      <div class="project-role">Research Consultant</div>
+      <p class="project-teaser">Helping one of the country's oldest public libraries build the muscle to evaluate its own work and better serve residents.</p>
+      <details class="detail-toggle">
+        <summary aria-label="Toggle project detail"></summary>
+        <p class="detail-text">I'm designing the evaluation capacity building strategy in phases, starting from a current-state diagnosis and building toward a pilot, while running mixed-methods research on how patrons actually discover and use library services.</p>
+      </details>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title-row">
+        <div class="project-title">Equitable Evaluation Plan for M&eacute;decins du Monde Canada</div>
+        <div class="project-date">2026</div>
+      </div>
+      <div class="project-org">McGill University, Max Bell School of Public Policy</div>
+      <div class="project-role">EC3 Case Challenge &middot; 1st place</div>
+      <p class="project-teaser">A multi-month evaluation capacity building training followed by a 24-hour case challenge, where my team's proposal won.</p>
+      <details class="detail-toggle">
+        <summary aria-label="Toggle project detail"></summary>
+        <p class="detail-text">Selected as one of twenty participants in the Max Bell School's Evaluation Capacity Case Challenge, I led a team to build a full evaluation capacity plan for M&eacute;decins du Monde Canada's National Operations Directorate: a theory of change, a phased governance structure, and an adaptive M&amp;E framework designed to work inside a resource-constrained humanitarian organization.</p>
+      </details>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title-row">
+        <div class="project-title">UNHCR Aid Targeting for Displacement in Afghanistan</div>
+        <div class="project-date">2023</div>
+      </div>
+      <div class="project-org">University of Chicago, Harris School of Public Policy</div>
+      <div class="project-role">Data and Policy Summer Scholars Program</div>
+      <p class="project-teaser">Turning mobility and survey data into district-level aid recommendations for a crisis still unfolding.</p>
+      <details class="detail-toggle">
+        <summary aria-label="Toggle project detail"></summary>
+        <p class="detail-text">For post-2021 displacement in Afghanistan, I synthesized geospatial mobility data, cellphone data, and UNHCR household surveys into district-level recommendations for targeting humanitarian aid. Alongside a high score on the International Policy Capstone, I received the Community Engagement Award.</p>
+      </details>
+    </div>
+    </div>
+
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section" id="education">
+    <h2 class="section-head">Education</h2>
+    <div class="exp-row">
+      <div class="exp-left">
+        <span class="exp-role">Master of Science in Public Policy and Management</span> &middot; <span class="exp-org">Carnegie Mellon University, Heinz College</span>
+      </div>
+      <div class="exp-yr">Aug 2026&ndash;Expected May 2028</div>
+    </div>
+    <div class="exp-row">
+      <div class="exp-left">
+        <span class="exp-role">BA, Economics and International Relations</span> &middot; <span class="exp-org">Connecticut College</span>
+      </div>
+      <div class="exp-yr">2016&ndash;2020</div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <h2 class="section-head">Experience</h2>
+    <div class="exp-row">
+      <div class="exp-left">
+        <span class="exp-role">Research Assistant to Dr. Manuela Collis</span> &middot; <span class="exp-org">Carnegie Mellon University, Heinz College</span>
+      </div>
+      <div class="exp-yr">2026&ndash;Present</div>
+    </div>
+    <div class="exp-row">
+      <div class="exp-left">
+        <span class="exp-role">Research Consultant</span> &middot; <span class="exp-org">Boston Public Library</span>
+      </div>
+      <div class="exp-yr">2026&ndash;Present</div>
+    </div>
+    <div class="exp-row">
+      <div class="exp-left">
+        <span class="exp-role">Behavioral Research Coordinator</span> &middot; <span class="exp-org">Harvard Business School</span>
+      </div>
+      <div class="exp-yr">2022&ndash;2026</div>
+    </div>
+    <div class="exp-row">
+      <div class="exp-left">
+        <span class="exp-role">Lab Coordinator</span> &middot; <span class="exp-org">MIT Sloan School of Management</span>
+      </div>
+      <div class="exp-yr">2021&ndash;2022</div>
+    </div>
+    <div class="exp-row">
+      <div class="exp-left">
+        <span class="exp-role">Research Assistant</span> &middot; <span class="exp-org">Harvard Kennedy School, Constructive Disagreement Lab</span>
+      </div>
+      <div class="exp-yr">2020&ndash;2021</div>
+    </div>
+    <div class="exp-row">
+      <div class="exp-left">
+        <span class="exp-role">Research Intern</span> &middot; <span class="exp-org">Duke Center for Advanced Hindsight</span>
+      </div>
+      <div class="exp-yr">2019</div>
+    </div>
+    <div class="exp-row">
+      <div class="exp-left">
+        <span class="exp-role">Research Assistant</span> &middot; <span class="exp-org">Harvard Kennedy School, Decision Science Lab</span>
+      </div>
+      <div class="exp-yr">2018&ndash;2019</div>
+    </div>
+  </section>
+
+  <!-- BACKGROUND -->
+  <section class="section" id="background">
+    <h2 class="section-head">Background</h2>
+    <div class="bg-prose">
+      <p>I grew up in a small town in Vermont, where everyone in the state felt like a neighbor. Surrounded by nature, I pursued a passion in horseback riding by sneaking out to clean stalls for a free ride at age ten. I continued to train as a working student in competitive show jumping and finished high school early to pursue it full time. After committing to it seven days a week, for 12+ hour days, I realized that I wanted and needed to do more for myself and for others in my community. I was fortunate to be able to scrape together applications for undergrad, and got into what was later revealed as the same college my French grandmother was one of the first international students at, Connecticut College.</p>
+      <details class="detail-toggle">
+        <summary aria-label="Toggle more background"></summary>
+        <div class="detail-label">The longer version</div>
+        <p class="detail-text">The odd jobs that sustained me through those years only reinforced my knack for business, people, and thinking strategically about what's next. Although I believed I would be like one of the scientists my dad's microscope refurbishing business helped, I found economics instead, and the rest was history. My curiosity was activated and I pursued micro to macro mechanisms, studying international relations alongside economics, because how could you only think domestically? I was entranced by the sterile models that made up a world of aggregate behavior, but somehow had the behavioral aspects stripped out of them. I did everything I could to expose myself to behavioral economics: taking a course in Stockholm over the summer, because I didn't have enough credit capacity to take a full semester abroad, and driving to as many talks, conferences, and other events at the Harvard Kennedy School as I could to understand how experts think about these mechanics in the real world.</p>
+      </details>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    &copy; Piper Oren
+  </footer>
+</main>
+
+<script>
+  const sections = document.querySelectorAll('.section');
+  const navLinks = document.querySelectorAll('.topnav-links a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        const active = document.querySelector(`.topnav-links a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
 </body>
 </html>
