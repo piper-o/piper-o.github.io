@@ -2,31 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Piper Oren</title>
   <meta name="description" content="Evaluation and evidence capacity for the public sector. Master of Science in Public Policy and Management, Carnegie Mellon University, Heinz College.">
+  <meta name="keywords" content="Piper Oren, government innovation, evaluation capacity building, public policy, Carnegie Mellon Heinz College, research assistant">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://piper-o.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Piper Oren">
+  <meta property="og:title" content="Piper Oren &mdash; Government Innovation &amp; Evaluation Capacity Building">
+  <meta property="og:description" content="Evaluation and evidence capacity for the public sector. MSPPM, Carnegie Mellon University, Heinz College.">
+  <meta property="og:url" content="https://piper-o.github.io/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Piper Oren">
+  <meta name="twitter:description" content="Evaluation and evidence capacity for the public sector.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%233a2d5e'/%3E%3C/svg%3E">
   <style>
     :root {
       --bg: #faf9f6;
       --text: #1a1916;
-      --muted: #7a7568;
+      --muted: #625d4f;
       --accent: #3a2d5e;
+      --accent-soft: #e7e2f4;
       --border: #e2dfd6;
       --font: "Times New Roman", Times, serif;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: env(safe-area-inset-top, 0px); }
     body {
       font-family: var(--font);
       background: var(--bg);
       color: var(--text);
       font-size: 16px;
       line-height: 1.7;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    a:focus-visible, summary:focus-visible, button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
     }
     /* TOP NAV */
     .topnav {
       position: sticky;
-      top: 0;
+      top: env(safe-area-inset-top, 0px);
       z-index: 100;
       background: var(--bg);
       border-bottom: 1px solid var(--border);
@@ -113,8 +132,11 @@
     }
     .project-card {
       border: 1px solid var(--border);
+      border-left: 3px solid var(--accent-soft);
       padding: 1.35rem 1.5rem;
+      transition: border-left-color 0.2s;
     }
+    .project-card:hover { border-left-color: var(--accent); }
     .project-title-row {
       display: flex;
       justify-content: space-between;
@@ -141,7 +163,21 @@
       font-size: 0.78rem;
       color: var(--muted);
       margin-top: 0.1rem;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.65rem;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.85rem;
+    }
+    .project-tags span {
+      font-size: 0.68rem;
+      letter-spacing: 0.03em;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 0.2rem 0.55rem;
+      border-radius: 2px;
     }
     .project-teaser {
       font-size: 0.88rem;
@@ -215,6 +251,25 @@
     }
     .bg-prose p { margin-bottom: 1rem; }
     .bg-prose p:last-child { margin-bottom: 0; }
+    /* PLACEHOLDER (background section, temporarily) */
+    .placeholder {
+      border: 1px dashed var(--border);
+      padding: 2.75rem 2rem;
+      text-align: center;
+    }
+    .placeholder-mark {
+      font-style: italic;
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+    }
+    .placeholder-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      max-width: 46ch;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
     /* FOOTER */
     .site-footer {
       font-size: 0.75rem;
@@ -223,6 +278,7 @@
       padding-top: 2rem;
       border-top: 1px solid var(--border);
       margin-top: 1rem;
+      padding-bottom: env(safe-area-inset-bottom, 0px);
     }
     /* MOBILE */
     @media (max-width: 700px) {
@@ -230,6 +286,10 @@
       .topnav-links { gap: 0.85rem; }
       .page { padding: 2rem 1.25rem 4rem; }
       .project-grid { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
     }
   </style>
 </head>
@@ -249,7 +309,7 @@
   <!-- HEADER -->
   <header class="site-header">
     <h1 class="site-name">Piper Oren</h1>
-    <p class="site-tagline">Building Governance Capacity for the Public Sector &middot; Pittsburgh, PA</p>
+    <p class="site-tagline">Government Innovation &middot; Capacity Building &middot; Pittsburgh, PA</p>
     <div class="site-links">
       <a href="https://www.linkedin.com/in/piper-oren/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="mailto:piper.oren@gmail.com">piper.oren@gmail.com</a>
@@ -268,10 +328,26 @@
       </div>
       <div class="project-org">Carnegie Mellon University, Heinz College</div>
       <div class="project-role">Research Assistant to Dr. Manuela Collis</div>
+      <div class="project-tags"><span>RCT Design</span><span>Data Infrastructure</span></div>
       <p class="project-teaser">Building the infrastructure for a field experiment on how scientists get funded.</p>
       <details class="detail-toggle">
         <summary aria-label="Toggle project detail"></summary>
         <p class="detail-text">I'm helping build the evaluation framework and field infrastructure for a large-scale randomized controlled trial studying science funding, including a theory of change workbook and the Python scripts for the data collection infrastructure, for the pilot this fall and full launch in spring 2027.</p>
+      </details>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title-row">
+        <div class="project-title">Future of Roles: AI-Augmented Workforce</div>
+        <div class="project-date">Aug&ndash;Dec 2026</div>
+      </div>
+      <div class="project-org">Carnegie Mellon University, Corporate Startup Lab</div>
+      <div class="project-role">Team Lead &middot; Capstone Client: BNY</div>
+      <div class="project-tags"><span>Workforce Strategy</span><span>Persona Framework</span></div>
+      <p class="project-teaser">A competitively selected capstone course pairing cross-school student teams with a sponsor client to rethink how AI reshapes roles across an organization.</p>
+      <details class="detail-toggle">
+        <summary aria-label="Toggle project detail"></summary>
+        <p class="detail-text">Corporate Startup Lab, Carnegie Mellon University (Aug&ndash;Dec 2026): selected into this highly competitive capstone course, I'm leading a six-person, multi-disciplinary team working closely with BNY to rethink roles, team structures, and employee personas for an AI-augmented workforce. I'm heading development of the persona framework anchoring our analysis, alongside in-depth research into how AI is reshaping the employee experience, and the team will pitch a strategic proposal and playbook to executives within BNY at a December sponsor roundtable.</p>
       </details>
     </div>
 
@@ -282,6 +358,7 @@
       </div>
       <div class="project-org">City of Boston, Office of the Parking Clerk</div>
       <div class="project-role">Summer Fellow</div>
+      <div class="project-tags"><span>Qualitative Research</span><span>Policy Analysis</span></div>
       <p class="project-teaser">Evaluating how parking access shapes the experience of giving and receiving home health care.</p>
       <details class="detail-toggle">
         <summary aria-label="Toggle project detail"></summary>
@@ -296,6 +373,7 @@
       </div>
       <div class="project-org">Boston Public Library</div>
       <div class="project-role">Research Consultant</div>
+      <div class="project-tags"><span>Evaluation Strategy</span><span>Mixed Methods</span></div>
       <p class="project-teaser">Helping one of the country's oldest public libraries build the muscle to evaluate its own work and better serve residents.</p>
       <details class="detail-toggle">
         <summary aria-label="Toggle project detail"></summary>
@@ -310,6 +388,7 @@
       </div>
       <div class="project-org">McGill University, Max Bell School of Public Policy</div>
       <div class="project-role">EC3 Case Challenge &middot; 1st place</div>
+      <div class="project-tags"><span>Theory of Change</span><span>Governance Design</span></div>
       <p class="project-teaser">A multi-month evaluation capacity building training followed by a 24-hour case challenge, where my team's proposal won.</p>
       <details class="detail-toggle">
         <summary aria-label="Toggle project detail"></summary>
@@ -324,6 +403,7 @@
       </div>
       <div class="project-org">University of Chicago, Harris School of Public Policy</div>
       <div class="project-role">Data and Policy Summer Scholars Program</div>
+      <div class="project-tags"><span>Geospatial Analysis</span><span>Humanitarian Aid</span></div>
       <p class="project-teaser">Turning mobility and survey data into district-level aid recommendations for a crisis still unfolding.</p>
       <details class="detail-toggle">
         <summary aria-label="Toggle project detail"></summary>
@@ -368,46 +448,42 @@
     </div>
     <div class="exp-row">
       <div class="exp-left">
-        <span class="exp-role">Behavioral Research Coordinator</span> &middot; <span class="exp-org">Harvard Business School</span>
+        <span class="exp-role">Behavioral Research Coordinator</span> &middot; <span class="exp-org">Harvard Business School, Division of Research and Faculty Development</span>
       </div>
       <div class="exp-yr">2022&ndash;2026</div>
     </div>
     <div class="exp-row">
       <div class="exp-left">
-        <span class="exp-role">Lab Coordinator</span> &middot; <span class="exp-org">MIT Sloan School of Management</span>
+        <span class="exp-role">Lab Coordinator</span> &middot; <span class="exp-org">MIT Sloan School of Management, Behavioral and Policy Sciences</span>
       </div>
       <div class="exp-yr">2021&ndash;2022</div>
     </div>
     <div class="exp-row">
       <div class="exp-left">
-        <span class="exp-role">Research Assistant</span> &middot; <span class="exp-org">Harvard Kennedy School, Constructive Disagreement Lab</span>
+        <span class="exp-role">Research Assistant to Dr. Julia Minson</span> &middot; <span class="exp-org">Harvard Kennedy School, Constructive Disagreement Lab</span>
       </div>
       <div class="exp-yr">2020&ndash;2021</div>
     </div>
     <div class="exp-row">
       <div class="exp-left">
-        <span class="exp-role">Research Intern</span> &middot; <span class="exp-org">Duke Center for Advanced Hindsight</span>
+        <span class="exp-role">Research Intern</span> &middot; <span class="exp-org">Duke University, Center for Advanced Hindsight</span>
       </div>
       <div class="exp-yr">2019</div>
     </div>
     <div class="exp-row">
       <div class="exp-left">
-        <span class="exp-role">Research Assistant</span> &middot; <span class="exp-org">Harvard Kennedy School, Decision Science Lab</span>
+        <span class="exp-role">Research Assistant</span> &middot; <span class="exp-org">Harvard Kennedy School, Harvard Decision Science Lab</span>
       </div>
       <div class="exp-yr">2018&ndash;2019</div>
     </div>
   </section>
 
-  <!-- BACKGROUND -->
+  <!-- BACKGROUND (placeholder for now) -->
   <section class="section" id="background">
-    <h2 class="section-head">Background (Working on finding the right words :) )</h2>
-    <div class="bg-prose">
-      <p>I grew up in a small town in Vermont, where everyone in the state felt like a neighbor. Surrounded by nature, I pursued a passion in horseback riding by sneaking out to clean stalls for a free ride at age ten. I continued to train as a working student in competitive show jumping and finished high school early to pursue it full time. After committing to it seven days a week, for 12+ hour days, I realized that I wanted and needed to do more for myself and for others in my community. I was fortunate to be able to scrape together applications for undergrad, and got into what was later revealed as the same college my French grandmother was one of the first international students at, Connecticut College.</p>
-      <details class="detail-toggle">
-        <summary aria-label="Toggle more background"></summary>
-        <div class="detail-label">The longer version</div>
-        <p class="detail-text">The odd jobs that sustained me through those years only reinforced my knack for business, people, and thinking strategically about what's next. Although I believed I would be like one of the scientists my dad's microscope refurbishing business helped, I found economics instead, and the rest was history. My curiosity was activated and I pursued micro to macro mechanisms, studying international relations alongside economics, because how could you only think domestically? I was entranced by the sterile models that made up a world of aggregate behavior, but somehow had the behavioral aspects stripped out of them. I did everything I could to expose myself to behavioral economics: taking a course in Stockholm over the summer, because I didn't have enough credit capacity to take a full semester abroad, and driving to as many talks, conferences, and other events at the Harvard Kennedy School as I could to understand how experts think about these mechanics in the real world.</p>
-      </details>
+    <h2 class="section-head">Background</h2>
+    <div class="placeholder">
+      <div class="placeholder-mark">&mdash; In Progress &mdash;</div>
+      <p class="placeholder-note">Check back soon.</p>
     </div>
   </section>
 
