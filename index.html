@@ -10,7 +10,7 @@
   <link rel="canonical" href="https://piper-o.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Piper Oren">
-  <meta property="og:title" content="Piper Oren &mdash; Government Innovation &amp; Evaluation Capacity Building">
+  <meta property="og:title" content="Piper Oren &middot; Government Innovation &amp; Evaluation Capacity Building">
   <meta property="og:description" content="Evaluation and evidence capacity for the public sector. MSPPM, Carnegie Mellon University, Heinz College.">
   <meta property="og:url" content="https://piper-o.github.io/">
   <meta name="twitter:card" content="summary">
@@ -205,16 +205,6 @@
       color: var(--accent);
       border-color: var(--accent);
     }
-    .detail-label {
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-top: 0.85rem;
-      padding-top: 0.85rem;
-      border-top: 1px solid var(--border);
-      margin-bottom: 0.6rem;
-    }
     .detail-text {
       font-size: 0.88rem;
       color: #4a4840;
@@ -226,7 +216,6 @@
       padding-top: 0.85rem;
       border-top: 1px solid var(--border);
     }
-    .bg-prose .detail-text { max-width: 960px; }
     /* EXPERIENCE STRIP */
     .exp-row {
       display: flex;
@@ -241,35 +230,8 @@
     .exp-left { flex: 1; min-width: 0; }
     .exp-role { font-size: 0.88rem; color: var(--text); }
     .exp-org { font-size: 0.82rem; color: var(--accent); font-style: italic; }
+    .exp-honor { font-size: 0.78rem; color: var(--muted); }
     .exp-yr { font-size: 0.78rem; color: var(--muted); font-style: italic; white-space: nowrap; }
-    /* BACKGROUND / PROSE */
-    .bg-prose {
-      font-size: 0.95rem;
-      color: #4a4840;
-      line-height: 1.85;
-      max-width: 960px;
-    }
-    .bg-prose p { margin-bottom: 1rem; }
-    .bg-prose p:last-child { margin-bottom: 0; }
-    /* PLACEHOLDER (background section, temporarily) */
-    .placeholder {
-      border: 1px dashed var(--border);
-      padding: 2.75rem 2rem;
-      text-align: center;
-    }
-    .placeholder-mark {
-      font-style: italic;
-      color: var(--accent);
-      font-size: 1.1rem;
-      margin-bottom: 0.6rem;
-    }
-    .placeholder-note {
-      font-size: 0.85rem;
-      color: var(--muted);
-      max-width: 46ch;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
     /* FOOTER */
     .site-footer {
       font-size: 0.75rem;
@@ -300,7 +262,6 @@
     <a href="#projects">Projects</a>
     <a href="#education">Education</a>
     <a href="#experience">Experience</a>
-    <a href="#background">Background</a>
   </div>
 </nav>
 
@@ -312,6 +273,7 @@
     <p class="site-tagline">Government Innovation &middot; Capacity Building &middot; Pittsburgh, PA</p>
     <div class="site-links">
       <a href="https://www.linkedin.com/in/piper-oren/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/piper-o" target="_blank" rel="noopener">GitHub</a>
       <a href="mailto:piper.oren@gmail.com">piper.oren@gmail.com</a>
     </div>
   </header>
@@ -321,55 +283,41 @@
     <h2 class="section-head">Projects</h2>
 
     <div class="project-grid">
-    <div class="project-card">
-      <div class="project-title-row">
-        <div class="project-title">Science Angels RCT</div>
-        <div class="project-date">2026&ndash;Present</div>
-      </div>
-      <div class="project-org">Carnegie Mellon University, Heinz College</div>
-      <div class="project-role">Research Assistant to Dr. Manuela Collis</div>
-      <div class="project-tags"><span>RCT Design</span><span>Data Infrastructure</span></div>
-      <p class="project-teaser">Building the infrastructure for a field experiment on how scientists get funded.</p>
-      <details class="detail-toggle">
-        <summary aria-label="Toggle project detail"></summary>
-        <p class="detail-text">I'm helping build the evaluation framework and field infrastructure for a large-scale randomized controlled trial studying science funding, including a theory of change workbook and the Python scripts for the data collection infrastructure, for the pilot this fall and full launch in spring 2027.</p>
-      </details>
-    </div>
 
     <div class="project-card">
       <div class="project-title-row">
         <div class="project-title">Future of Roles: AI-Augmented Workforce</div>
-        <div class="project-date">Aug&ndash;Dec 2026</div>
+        <div class="project-date">Sept 2026&ndash;Present</div>
       </div>
       <div class="project-org">Carnegie Mellon University, Corporate Startup Lab</div>
       <div class="project-role">Team Lead &middot; Capstone Client: BNY</div>
-      <div class="project-tags"><span>Workforce Strategy</span><span>Persona Framework</span></div>
-      <p class="project-teaser">A competitively selected capstone course pairing cross-school student teams with a sponsor client to rethink how AI reshapes roles across an organization.</p>
+      <div class="project-tags"><span>AI Adoption</span><span>Persona Framework</span></div>
+      <p class="project-teaser">How AI changes the way people actually work, studied from inside a global bank.</p>
       <details class="detail-toggle">
         <summary aria-label="Toggle project detail"></summary>
-        <p class="detail-text">Corporate Startup Lab, Carnegie Mellon University (Aug&ndash;Dec 2026): selected into this highly competitive capstone course, I'm leading a six-person, multi-disciplinary team working closely with BNY to rethink roles, team structures, and employee personas for an AI-augmented workforce. I'm heading development of the persona framework anchoring our analysis, alongside in-depth research into how AI is reshaping the employee experience, and the team will pitch a strategic proposal and playbook to executives within BNY at a December sponsor roundtable.</p>
+        <p class="detail-text">I lead a six-person, cross-school team in CMU's competitively selected Corporate Startup Lab, working with BNY on how employees take up Eliza, the firm's internal AI platform. We're using journey mapping, interviews, and surveys to find where adoption stalls across roles, and I'm building the persona framework that anchors our analysis. In December, we pitch a strategy and multi-year playbook to BNY executives.</p>
       </details>
     </div>
 
     <div class="project-card">
       <div class="project-title-row">
-        <div class="project-title">Home Healthcare Placard Program</div>
-        <div class="project-date">2026</div>
+        <div class="project-title">Home Healthcare Provider Permit</div>
+        <div class="project-date">Summer 2026</div>
       </div>
       <div class="project-org">City of Boston, Office of the Parking Clerk</div>
-      <div class="project-role">Summer Fellow</div>
+      <div class="project-role">Summer Fellow &middot; Curb Transformation Initiative</div>
       <div class="project-tags"><span>Qualitative Research</span><span>Policy Analysis</span></div>
       <p class="project-teaser">Evaluating how parking access shapes the experience of giving and receiving home health care.</p>
       <details class="detail-toggle">
         <summary aria-label="Toggle project detail"></summary>
-        <p class="detail-text">I supported the digitization of this program and built the persona discovery, data collection, and analysis infrastructure for interviews across home health aides, family caregivers, residents, and the connectors working between them. The current-state report and interview data are now informing the next round of curb access policy.</p>
+        <p class="detail-text">I co-led the evaluation, digitization, and reform of a city permit that lets home health workers park near the residents they care for. I built the persona discovery, data collection, and analysis infrastructure for interviews with five stakeholder groups, from care agencies to family caregivers, and reconciled the partner's permit records against the City's own. The current-state report and recommendations are now informing the next round of curb access policy.</p>
       </details>
     </div>
 
     <div class="project-card">
       <div class="project-title-row">
         <div class="project-title">Patron Research &amp; Evaluation Capacity Building Strategy</div>
-        <div class="project-date">2026&ndash;Present</div>
+        <div class="project-date">Aug 2026&ndash;Present</div>
       </div>
       <div class="project-org">Boston Public Library</div>
       <div class="project-role">Research Consultant</div>
@@ -377,41 +325,56 @@
       <p class="project-teaser">Helping one of the country's oldest public libraries build the muscle to evaluate its own work and better serve residents.</p>
       <details class="detail-toggle">
         <summary aria-label="Toggle project detail"></summary>
-        <p class="detail-text">I'm designing the evaluation capacity building strategy in phases, starting from a current-state diagnosis and building toward a pilot, while running mixed-methods research on how patrons actually discover and use library services.</p>
+        <p class="detail-text">I'm designing the evaluation capacity building strategy in phases, starting from a current-state diagnosis and building toward a pilot, while running mixed-methods research on how patrons actually discover and use library services. Much of the work is getting staff and data owners across locations to line up administrative data with what frontline staff see every day.</p>
+      </details>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title-row">
+        <div class="project-title">Science Angels: An RCT on Scientific Field-Building</div>
+        <div class="project-date">Aug 2026&ndash;Present</div>
+      </div>
+      <div class="project-org">Carnegie Mellon University, Heinz College</div>
+      <div class="project-role">Research Assistant to Dr. Manuela Collis</div>
+      <div class="project-tags"><span>RCT Design</span><span>Data Infrastructure</span></div>
+      <p class="project-teaser">Building the infrastructure for a field experiment on how scientists get funded.</p>
+      <details class="detail-toggle">
+        <summary aria-label="Toggle project detail"></summary>
+        <p class="detail-text">Selected before starting my degree, I'm supporting a $4M randomized controlled trial funded by Experiment Foundation and Coefficient Giving. I designed the theory of change, which tracks outcomes at both the topic and individual level over multiple years, and I lead the Python pipelines and API integrations, including OpenAlex and Dimensions, that follow those outcomes across platforms. The pilot runs this fall, with full launch in spring 2027.</p>
       </details>
     </div>
 
     <div class="project-card">
       <div class="project-title-row">
         <div class="project-title">Equitable Evaluation Plan for M&eacute;decins du Monde Canada</div>
-        <div class="project-date">2026</div>
+        <div class="project-date">Jan&ndash;May 2026</div>
       </div>
       <div class="project-org">McGill University, Max Bell School of Public Policy</div>
-      <div class="project-role">EC3 Case Challenge &middot; 1st place</div>
+      <div class="project-role">EC3 Case Challenge &middot; Team Lead &middot; 1st place</div>
       <div class="project-tags"><span>Theory of Change</span><span>Governance Design</span></div>
-      <p class="project-teaser">A multi-month evaluation capacity building training followed by a 24-hour case challenge, where my team's proposal won.</p>
+      <p class="project-teaser">Designing evaluation that fits inside a stretched humanitarian team's real workday.</p>
       <details class="detail-toggle">
         <summary aria-label="Toggle project detail"></summary>
-        <p class="detail-text">Selected as one of twenty participants in the Max Bell School's Evaluation Capacity Case Challenge, I led a team to build a full evaluation capacity plan for M&eacute;decins du Monde Canada's National Operations Directorate: a theory of change, a phased governance structure, and an adaptive M&amp;E framework designed to work inside a resource-constrained humanitarian organization.</p>
+        <p class="detail-text">Selected as one of twenty participants in the Max Bell School's five-month Evaluation Capacity Case Challenge, I led my team to first place in the final 24-hour competition. For M&eacute;decins du Monde Canada's National Operations Directorate, we built a theory of change, a phased governance structure, and an adaptive M&amp;E framework that moves the organization from after-the-fact reporting toward continuous learning without eating into frontline staff time.</p>
       </details>
     </div>
 
     <div class="project-card">
       <div class="project-title-row">
         <div class="project-title">UNHCR Aid Targeting for Displacement in Afghanistan</div>
-        <div class="project-date">2023</div>
+        <div class="project-date">Summer 2023</div>
       </div>
       <div class="project-org">University of Chicago, Harris School of Public Policy</div>
-      <div class="project-role">Data and Policy Summer Scholars Program</div>
+      <div class="project-role">Data and Policy Summer Scholar &middot; Merit Scholar</div>
       <div class="project-tags"><span>Geospatial Analysis</span><span>Humanitarian Aid</span></div>
       <p class="project-teaser">Turning mobility and survey data into district-level aid recommendations for a crisis still unfolding.</p>
       <details class="detail-toggle">
         <summary aria-label="Toggle project detail"></summary>
-        <p class="detail-text">For post-2021 displacement in Afghanistan, I synthesized geospatial mobility data, cellphone data, and UNHCR household surveys into district-level recommendations for targeting humanitarian aid. Alongside a high score on the International Policy Capstone, I received the Community Engagement Award.</p>
+        <p class="detail-text">For post-2021 displacement in Afghanistan, I combined cellphone mobility data, geospatial data, and UNHCR household surveys to test how well the surveys represent displaced populations. Nighttime light turned out to be a strong predictor of displacement, so I proposed a privacy-preserving satellite approach to target aid proactively. The project earned a high score on the International Policy Capstone and the Community Engagement Award.</p>
       </details>
     </div>
-    </div>
 
+    </div>
   </section>
 
   <!-- EDUCATION -->
@@ -419,13 +382,13 @@
     <h2 class="section-head">Education</h2>
     <div class="exp-row">
       <div class="exp-left">
-        <span class="exp-role">Master of Science in Public Policy and Management</span> &middot; <span class="exp-org">Carnegie Mellon University, Heinz College</span>
+        <span class="exp-role">Master of Science in Public Policy and Management</span> &middot; <span class="exp-org">Carnegie Mellon University, Heinz College</span> &middot; <span class="exp-honor">75% Merit Scholar</span>
       </div>
       <div class="exp-yr">Aug 2026&ndash;Expected May 2028</div>
     </div>
     <div class="exp-row">
       <div class="exp-left">
-        <span class="exp-role">BA, Economics and International Relations</span> &middot; <span class="exp-org">Connecticut College</span>
+        <span class="exp-role">BA, Economics and International Relations</span> &middot; <span class="exp-org">Connecticut College</span> &middot; <span class="exp-honor">Chair's Prize in Economics</span>
       </div>
       <div class="exp-yr">2016&ndash;2020</div>
     </div>
@@ -475,15 +438,6 @@
         <span class="exp-role">Research Assistant</span> &middot; <span class="exp-org">Harvard Kennedy School, Harvard Decision Science Lab</span>
       </div>
       <div class="exp-yr">2018&ndash;2019</div>
-    </div>
-  </section>
-
-  <!-- BACKGROUND (placeholder for now) -->
-  <section class="section" id="background">
-    <h2 class="section-head">Background</h2>
-    <div class="placeholder">
-      <div class="placeholder-mark">&mdash; In Progress &mdash;</div>
-      <p class="placeholder-note">Check back soon.</p>
     </div>
   </section>
 
