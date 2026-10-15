@@ -38,7 +38,7 @@
       padding-top: env(safe-area-inset-top, 0px);
       padding-bottom: env(safe-area-inset-bottom, 0px);
     }
-    a:focus-visible, summary:focus-visible, button:focus-visible {
+    a:focus-visible, button:focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 2px;
     }
@@ -128,12 +128,12 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.1rem;
-      align-items: start;
+      align-items: stretch;
     }
     .project-card {
       border: 1px solid var(--border);
       border-left: 3px solid var(--accent-soft);
-      padding: 1.35rem 1.5rem;
+      padding: 1.2rem 1.5rem;
       transition: border-left-color 0.2s;
     }
     .project-card:hover { border-left-color: var(--accent); }
@@ -169,7 +169,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.75rem;
     }
     .project-tags span {
       font-size: 0.68rem;
@@ -183,38 +183,6 @@
       font-size: 0.88rem;
       color: #4a4840;
       line-height: 1.6;
-      margin-bottom: 0.6rem;
-    }
-    .detail-toggle summary {
-      list-style: none;
-      cursor: pointer;
-      font-size: 0.8rem;
-      color: var(--muted);
-      font-style: italic;
-      width: fit-content;
-    }
-    .detail-toggle summary::-webkit-details-marker { display: none; }
-    .detail-toggle summary::after {
-      content: "Read more";
-      border-bottom: 1px solid var(--border);
-    }
-    .detail-toggle[open] summary::after {
-      content: "Show less";
-    }
-    .detail-toggle summary:hover::after {
-      color: var(--accent);
-      border-color: var(--accent);
-    }
-    .detail-text {
-      font-size: 0.88rem;
-      color: #4a4840;
-      line-height: 1.75;
-      max-width: 68ch;
-    }
-    .project-card .detail-text {
-      margin-top: 0.85rem;
-      padding-top: 0.85rem;
-      border-top: 1px solid var(--border);
     }
     /* EXPERIENCE STRIP */
     .exp-row {
@@ -292,11 +260,7 @@
       <div class="project-org">Carnegie Mellon University, Corporate Startup Lab</div>
       <div class="project-role">Team Lead &middot; Capstone Client: BNY</div>
       <div class="project-tags"><span>AI Adoption</span><span>Persona Framework</span></div>
-      <p class="project-teaser">How AI changes the way people actually work, studied from inside a global bank.</p>
-      <details class="detail-toggle">
-        <summary aria-label="Toggle project detail"></summary>
-        <p class="detail-text">I lead a six-person, cross-school team in CMU's competitively selected Corporate Startup Lab, working with BNY on how employees take up Eliza, the firm's internal AI platform. We're using journey mapping, interviews, and surveys to find where adoption stalls across roles, and I'm building the persona framework that anchors our analysis. In December, we pitch a strategy and multi-year playbook to BNY executives.</p>
-      </details>
+      <p class="project-teaser">Studying how BNY employees adopt and use the firm's internal AI platform.</p>
     </div>
 
     <div class="project-card">
@@ -307,11 +271,7 @@
       <div class="project-org">City of Boston, Office of the Parking Clerk</div>
       <div class="project-role">Summer Fellow &middot; Curb Transformation Initiative</div>
       <div class="project-tags"><span>Qualitative Research</span><span>Policy Analysis</span></div>
-      <p class="project-teaser">Evaluating how parking access shapes the experience of giving and receiving home health care.</p>
-      <details class="detail-toggle">
-        <summary aria-label="Toggle project detail"></summary>
-        <p class="detail-text">I co-led the evaluation, digitization, and reform of a city permit that lets home health workers park near the residents they care for. I built the persona discovery, data collection, and analysis infrastructure for interviews with five stakeholder groups, from care agencies to family caregivers, and reconciled the partner's permit records against the City's own. The current-state report and recommendations are now informing the next round of curb access policy.</p>
-      </details>
+      <p class="project-teaser">Evaluating how parking access affects home health care in Boston.</p>
     </div>
 
     <div class="project-card">
@@ -322,26 +282,18 @@
       <div class="project-org">Boston Public Library</div>
       <div class="project-role">Research Consultant</div>
       <div class="project-tags"><span>Evaluation Strategy</span><span>Mixed Methods</span></div>
-      <p class="project-teaser">Helping one of the country's oldest public libraries build the muscle to evaluate its own work and better serve residents.</p>
-      <details class="detail-toggle">
-        <summary aria-label="Toggle project detail"></summary>
-        <p class="detail-text">I'm designing the evaluation capacity building strategy in phases, starting from a current-state diagnosis and building toward a pilot, while running mixed-methods research on how patrons actually discover and use library services. Much of the work is getting staff and data owners across locations to line up administrative data with what frontline staff see every day.</p>
-      </details>
+      <p class="project-teaser">Helping the Boston Public Library evaluate its programs and understand how patrons use its services.</p>
     </div>
 
     <div class="project-card">
       <div class="project-title-row">
-        <div class="project-title">Science Angels: An RCT on Scientific Field-Building</div>
+        <div class="project-title">An RCT on Scientific Field-Building</div>
         <div class="project-date">Aug 2026&ndash;Present</div>
       </div>
       <div class="project-org">Carnegie Mellon University, Heinz College</div>
       <div class="project-role">Research Assistant to Dr. Manuela Collis</div>
       <div class="project-tags"><span>RCT Design</span><span>Data Infrastructure</span></div>
-      <p class="project-teaser">Building the infrastructure for a field experiment on how scientists get funded.</p>
-      <details class="detail-toggle">
-        <summary aria-label="Toggle project detail"></summary>
-        <p class="detail-text">Selected before starting my degree, I'm supporting a $4M randomized controlled trial funded by Experiment Foundation and Coefficient Giving. I designed the theory of change, which tracks outcomes at both the topic and individual level over multiple years, and I lead the Python pipelines and API integrations, including OpenAlex and Dimensions, that follow those outcomes across platforms. The pilot runs this fall, with full launch in spring 2027.</p>
-      </details>
+      <p class="project-teaser">Investigating new approaches to funding science.</p>
     </div>
 
     <div class="project-card">
@@ -352,11 +304,7 @@
       <div class="project-org">McGill University, Max Bell School of Public Policy</div>
       <div class="project-role">EC3 Case Challenge &middot; Team Lead &middot; 1st place</div>
       <div class="project-tags"><span>Theory of Change</span><span>Governance Design</span></div>
-      <p class="project-teaser">Designing evaluation that fits inside a stretched humanitarian team's real workday.</p>
-      <details class="detail-toggle">
-        <summary aria-label="Toggle project detail"></summary>
-        <p class="detail-text">Selected as one of twenty participants in the Max Bell School's five-month Evaluation Capacity Case Challenge, I led my team to first place in the final 24-hour competition. For M&eacute;decins du Monde Canada's National Operations Directorate, we built a theory of change, a phased governance structure, and an adaptive M&amp;E framework that moves the organization from after-the-fact reporting toward continuous learning without eating into frontline staff time.</p>
-      </details>
+      <p class="project-teaser">An evaluation plan designed to fit within a humanitarian team's existing workload.</p>
     </div>
 
     <div class="project-card">
@@ -367,11 +315,7 @@
       <div class="project-org">University of Chicago, Harris School of Public Policy</div>
       <div class="project-role">Data and Policy Summer Scholar &middot; Merit Scholar</div>
       <div class="project-tags"><span>Geospatial Analysis</span><span>Humanitarian Aid</span></div>
-      <p class="project-teaser">Turning mobility and survey data into district-level aid recommendations for a crisis still unfolding.</p>
-      <details class="detail-toggle">
-        <summary aria-label="Toggle project detail"></summary>
-        <p class="detail-text">For post-2021 displacement in Afghanistan, I combined cellphone mobility data, geospatial data, and UNHCR household surveys to test how well the surveys represent displaced populations. Nighttime light turned out to be a strong predictor of displacement, so I proposed a privacy-preserving satellite approach to target aid proactively. The project earned a high score on the International Policy Capstone and the Community Engagement Award.</p>
-      </details>
+      <p class="project-teaser">Using mobility and survey data to inform district-level aid targeting.</p>
     </div>
 
     </div>
